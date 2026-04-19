@@ -156,10 +156,28 @@
 	},
 	"选择零点追踪关卡": {
 		"recognition": {
-			"type": "OCR",
+			"type": "Or",
 			"param": {
-				"expected": ["9"],
-				"roi": [408, 306, 60, 68]
+				"any_of": [
+					{
+						"recognition": {
+							"type": "OCR",
+							"param": {
+								"expected": ["9"],
+								"roi": [408, 306, 60, 68]
+							}
+						}
+					},
+					{
+						"recognition": {
+							"type": "TemplateMatch",
+							"param": {
+								"template": ["fight/bounty_hunt/关卡9.png"],
+								"roi": [365, 283, 129, 123]
+							}
+						}
+					}
+				]
 			}
 		},
 		"action": {
