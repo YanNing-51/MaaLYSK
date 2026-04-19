@@ -62,7 +62,15 @@
 			"Node.Action.Succeeded": "进入虹夜商店"
 		},
 		"timeout": 5000,
-		"next": ["[JumpBack]虹夜商店_物品购买", "[JumpBack]退出获得奖励popop"]
+		"next": [
+			"[JumpBack]虹夜商店_物品购买",
+			"[JumpBack]虹夜商店_物品购买1",
+			"[JumpBack]退出获得奖励popop",
+			"[JumpBack]退出点击空白继续popop",
+			"[JumpBack]退出牵绊度提升popop",
+			"[JumpBack]退出各类弹窗"
+		],
+		"on_error": ["null"]
 	},
 	"虹夜商店_物品购买": {
 		"recognition": {
@@ -70,6 +78,21 @@
 			"param": {
 				"template": ["shopping/event/乌鸦芯片物品购买.png"],
 				"roi": [189, 445, 132, 123]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"timeout": 8000,
+		"next": ["购买最多", "虹夜商店_领取单个"]
+	},
+	"虹夜商店_物品购买1": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["shopping/event/乌鸦芯片物品购买.png"],
+				"roi": [464, 447, 133, 124]
 			}
 		},
 		"action": {
@@ -102,7 +125,7 @@
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": ["shopping/商店购买.png"],
+				"template": ["shopping/商店购买.png", "shopping/商店购买1.png"],
 				"roi": [256, 743, 215, 68]
 			}
 		},
@@ -112,11 +135,15 @@
 		},
 		"pre_delay": 500,
 		"post_delay": 1000,
+		"timeout": 6000,
 		"next": [
 			"是否商城页面",
 			"[JumpBack]退出获得奖励popop",
-			"[JumpBack]退出点击（上限）popop"
-		]
+			"[JumpBack]退出点击（上限）popop",
+			"[JumpBack]退出点击空白继续popop",
+			"[JumpBack]退出牵绊度提升popop"
+		],
+		"on_error": ["null"]
 	},
 	"虹夜商店_领取最多": {
 		"recognition": {
@@ -132,10 +159,14 @@
 		},
 		"pre_delay": 500,
 		"post_delay": 1000,
+		"timeout": 6000,
 		"next": [
 			"是否商城页面",
 			"[JumpBack]退出获得奖励popop",
-			"[JumpBack]退出点击（上限）popop"
-		]
+			"[JumpBack]退出点击（上限）popop",
+			"[JumpBack]退出点击空白继续popop",
+			"[JumpBack]退出牵绊度提升popop"
+		],
+		"on_error": ["null"]
 	}
 }
