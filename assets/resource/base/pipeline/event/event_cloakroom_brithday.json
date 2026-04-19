@@ -47,6 +47,7 @@
 		"action": {
 			"type": "Click"
 		},
+		"focus": "进入衣帽间",
 		"next": ["已在衣帽间页面"]
 	},
 	"已在衣帽间页面": {
@@ -60,6 +61,7 @@
 		"action": {
 			"type": "DoNothing"
 		},
+		"focus": "开始衣帽间剧情",
 		"timeout": 8000,
 		"next": ["[JumpBack]寻找可制作服装"],
 		"on_error": ["[JumpBack]向下找找服装"]
@@ -80,6 +82,7 @@
 				"duration": 600
 			}
 		},
+		"focus": "向下找找服装",
 		"max_hit": 2,
 		"timeout": 8000,
 		"next": ["[JumpBack]寻找可制作服装"],

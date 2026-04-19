@@ -92,6 +92,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "阅读第1段剧情",
 		"max_hit": 1,
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
@@ -133,6 +134,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "阅读第2段剧情",
 		"max_hit": 1,
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
@@ -171,6 +173,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "阅读第3段剧情",
 		"max_hit": 1,
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
@@ -188,6 +191,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "阅读第4段剧情",
 		"max_hit": 1,
 		"post_delay": 2000,
 		"next": ["准备好送出娃娃"],
@@ -205,6 +209,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "准备送出娃娃",
 		"post_delay": 1000,
 		"repeat": 2,
 		"next": ["自动过剧情"],
@@ -224,6 +229,7 @@
 				"target": [474, 675, 13, 7]
 			}
 		},
+		"focus": "确定送出默认娃娃",
 		"post_delay": 1000,
 		"repeat": 2,
 		"next": ["准备好送出娃娃"],
