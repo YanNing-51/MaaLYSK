@@ -30,22 +30,22 @@ DISTRIBUTION_RULES = [
     # 稳定版 - macOS
     (
         ("macos",),
-        ["/apps/MaaLYSK/正式版/"],
+        ["/apps/MaaLYSK/正式版/Mac系统/"],
     ),
     # 稳定版 - Windows
     (
         ("win",),
-        ["/apps/MaaLYSK/正式版/"],
+        ["/apps/MaaLYSK/正式版/Win系统/"],
     ),
     # 公测版 - macOS
     (
         ("beta", "macos"),
-        ["/apps/MaaLYSK/公测版/"],
+        ["/apps/MaaLYSK/公测版/Mac系统/"],
     ),
     # 公测版 - Windows
     (
         ("beta", "win"),
-        ["/apps/MaaLYSK/公测版/"],
+        ["/apps/MaaLYSK/公测版/Win系统/"],
     ),
 ]
 
@@ -374,24 +374,16 @@ def main():
                 print(f"  * 匹配规则: {keywords}, 将分发到 {len(dest_paths)} 个位置。")
 
                 for base_path in dest_paths:
-                    # 构建新路径：基础目录/版本文件夹/系统子文件夹
-                    # 根据规则判断系统子文件夹
-                    if "macos" in keywords:
-                        system_subfolder = "Mac系统"
-                    elif "win" in keywords:
-                        system_subfolder = "Win系统"
-                    else:
-                        system_subfolder = ""
-                    
-                    versioned_dest_path = f"{base_path.rstrip('/')}/{new_folder_name}/{system_subfolder}".rstrip("/")
-                    
-                    # 先创建版本文件夹，再创建系统子文件夹
-                    version_parent_path = f"{base_path.rstrip('/')}/{new_folder_name}"
-                    if create_dir(token, version_parent_path) and create_dir(token, versioned_dest_path):
+                    versioned_dest_path = f"{base_path.rstrip('/')}/{new_folder_name}"
+
+                    if create_dir(token, versioned_dest_path):
+                        # 源路径：版本文件夹路径
                         src_dir = f"{SOURCE_DIR}/{latest_tag}"
                         copy_file(token, src_dir, versioned_dest_path, filename)
                     else:
-                        print(f"  ✗ 未能创建目标目录 {versioned_dest_path}，跳过此目标的上传。")
+                        print(
+                            f"  ✗ 未能创建目标目录 {versioned_dest_path}，跳过此目标的上传。"
+                        )
 
                 matched = True
                 break
