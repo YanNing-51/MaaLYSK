@@ -58,12 +58,12 @@ jobs:
 
   # 部署工作
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
+    environment:
+      name: ${{ github.event_name == 'workflow_dispatch' && 'github-pages' || 'release-deployment' }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
