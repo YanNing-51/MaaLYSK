@@ -56,6 +56,9 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": {
+			"Node.Action.Succeeded": "领取每日月卡"
+		},
 		"next": [
 			"[JumpBack]鎏金礼·珍贵领取",
 			"[JumpBack]鎏金礼·璀璨领取",
@@ -76,6 +79,9 @@
 			"param": {
 				"target_offset": [10, 5, -20, -10]
 			}
+		},
+		"focus": {
+			"Node.Action.Succeeded": "领取鎏金礼·珍贵成功!"
 		}
 	},
 	"鎏金礼·璀璨领取": {
@@ -91,6 +97,9 @@
 			"param": {
 				"target_offset": [10, 5, -20, -10]
 			}
+		},
+		"focus": {
+			"Node.Action.Succeeded": "领取鎏金礼·璀璨成功!"
 		}
 	}
 }
