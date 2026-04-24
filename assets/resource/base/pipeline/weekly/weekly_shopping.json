@@ -49,7 +49,7 @@
 		"repeat_delay": 1000,
 		"timeout": 5000,
 		"focus": {
-			"Node.PipelineNode.Failed": "[color:red]无每周礼包可领取[/color]"
+			"Node.PipelineNode.Failed": "<span style=\"color:red\">无每周礼包可领取</span>"
 		},
 		"next": ["商城每周礼包"],
 		"on_error": ["周常_点击兑换"]
@@ -182,7 +182,7 @@
 		},
 		"focus": {
 			"Node.Action.Succeeded": "进入快乐小铺",
-			"Node.PipelineNode.Failed": "[color:red]快乐小铺没有可购买物品[/color]"
+			"Node.PipelineNode.Failed": "<span style=\"color:red\">快乐小铺没有可购买物品</span>"
 		},
 		"timeout": 5000,
 		"next": ["[JumpBack]小铺_极空许愿券", "[JumpBack]小铺_辉耀磁石"]
@@ -309,7 +309,7 @@
 		},
 		"focus": {
 			"Node.Action.Succeeded": "进入心砂商店",
-			"Node.PipelineNode.Failed": "[color:red]心砂商店没有可购买物品[/color]"
+			"Node.PipelineNode.Failed": "<span style=\"color:red\">心砂商店没有可购买物品</span>"
 		},
 		"timeout": 5000,
 		"next": ["[JumpBack]紫砂_极空许愿券", "[JumpBack]蓝砂_加速魔方"],

@@ -81,7 +81,7 @@
 			}
 		},
 		"focus": {
-			"Node.Action.Succeeded": "[color:orange]消耗加速魔方进行收取[/color]"
+			"Node.Action.Succeeded": "<span style=\"color:orange\">消耗加速魔方进行收取</span>"
 		},
 		"next": ["收取探测信号", "[JumpBack]星间探测点击"]
 	},

@@ -43,7 +43,7 @@
 		},
 		"timeout": 5000,
 		"focus": {
-			"Node.PipelineNode.Failed": "[color:red]没有可领取的年卡奖励[/color]"
+			"Node.PipelineNode.Failed": "<span style=\"color:red\">没有可领取的年卡奖励</span>"
 		},
 		"next": ["年卡领取"]
 	},

@@ -5,7 +5,7 @@
 			"entry": "进入自动读短信",
 			"default_check": false,
 			"option": ["读短信男主"],
-			"description": "自动读取短信，默认选择第一个选项。介意请不要使用此功能\n\n勾选为读短信，需要填短信页面你设置的男主昵称"
+			"description": "自动读取短信，默认选择第一个选项。介意请不要使用此功能<br>勾选为读短信，需要填短信页面你设置的男主昵称"
 		}
 	],
 	"option": {
@@ -175,7 +175,7 @@
 			"inputs": [
 				{
 					"name": "Xavier_nickname",
-					"description": "填写沈星回在短信页面你设置的昵称,可以与其他人区别开即可\n\n识别失败减少字数或换字",
+					"description": "填写沈星回在短信页面你设置的昵称,可以与其他人区别开即可<br>识别失败减少字数或换字",
 					"label": "沈星回昵称",
 					"pipeline_type": "string",
 					"default": "沈星回"
@@ -192,7 +192,7 @@
 			"inputs": [
 				{
 					"name": "Zayne_nickname",
-					"description": "填写黎深在短信页面你设置的昵称,可以与其他人区别开即可\n\n识别失败减少字数或换字",
+					"description": "填写黎深在短信页面你设置的昵称,可以与其他人区别开即可<br>识别失败减少字数或换字",
 					"label": "黎深昵称",
 					"pipeline_type": "string",
 					"default": "黎深"
@@ -209,7 +209,7 @@
 			"inputs": [
 				{
 					"name": "Rafayel_nickname",
-					"description": "填写祁煜在短信页面你设置的昵称,可以与其他人区别开即可\n\n识别失败减少字数或换字",
+					"description": "填写祁煜在短信页面你设置的昵称,可以与其他人区别开即可<br>识别失败减少字数或换字",
 					"label": "祁煜昵称",
 					"pipeline_type": "string",
 					"default": "祁煜"
@@ -226,7 +226,7 @@
 			"inputs": [
 				{
 					"name": "Sylus_nickname",
-					"description": "填写秦彻在短信页面你设置的昵称,可以与其他人区别开即可\n\n识别失败减少字数或换字",
+					"description": "填写秦彻在短信页面你设置的昵称,可以与其他人区别开即可<br>识别失败减少字数或换字",
 					"label": "秦彻昵称",
 					"pipeline_type": "string",
 					"default": "秦彻"
@@ -243,7 +243,7 @@
 			"inputs": [
 				{
 					"name": "Caleb_nickname",
-					"description": "填写夏以昼在短信页面你设置的昵称,可以与其他人区别开即可\n\n识别失败减少字数或换字",
+					"description": "填写夏以昼在短信页面你设置的昵称,可以与其他人区别开即可<br>识别失败减少字数或换字",
 					"label": "夏以昼昵称",
 					"pipeline_type": "string",
 					"default": "夏以昼"
