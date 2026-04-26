@@ -97,7 +97,11 @@
 		"focus": {
 			"Node.Recognition.Succeeded": "选择平衡捕手"
 		},
-		"next": ["娃娃机是否上限", "[JumpBack]娃娃机出发"],
+		"next": [
+			"娃娃机是否上限",
+			"[JumpBack]娃娃机出发",
+			"[JumpBack]娃娃机再来一局"
+		],
 		"on_error": ["null"]
 	},
 	"选择平衡捕手": {
