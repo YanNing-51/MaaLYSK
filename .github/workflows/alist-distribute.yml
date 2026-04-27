@@ -4,16 +4,21 @@ on:
   # 手动触发：支持输入 tag
   workflow_dispatch:
     inputs:
+      tag:
+        description: "The release tag to distribute"
+        required: false
+        default: ""
+        type: string
       version_mode:
         description: "选择分发模式"
-        required: true
-        default: "latest"
+        required: false
+        default: ""
         type: choice
         options:
-          - "latest"           # 最新版（不限 beta/正式，排除 alpha）
-          - "latest-beta"      # 公测版最新（排除 alpha）
-          - "latest-stable"    # 正式版最新（排除 alpha）
-          - "manual"           # 手动输入 tag（允许 alpha）
+          - "latest"
+          - "latest-beta"
+          - "latest-stable"
+          - "manual"
       manual_tag:
         description: "当选择 manual 时，输入具体的 release tag（例如 v1.0.0）"
         required: false
@@ -40,11 +45,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # 优先使用手动输入的 tag
-          MANUAL_TAG="${{ github.event.inputs.manual_tag }}"
+          MANUAL_TAG="${{ github.event.inputs.tag }}"
           VERSION_MODE="${{ github.event.inputs.version_mode }}"
+          MANUAL_TAG_INPUT="${{ github.event.inputs.manual_tag }}"
           FROM_INSTALL="${{ github.event.inputs.from_install }}"
 
-          if [ -n "$MANUAL_TAG" ] && [ "$VERSION_MODE" = "manual" ]; then
+          # 原有逻辑：如果有 tag 参数，走原来的流程
+          if [ -n "$MANUAL_TAG" ]; then
             TAG="$MANUAL_TAG"
             
             # 判断是否来自 install workflow
@@ -59,38 +66,60 @@ jobs:
               NEED_APPROVAL="false"
               echo "✅ 使用手动输入的版本: $TAG"
             fi
-          elif [ "$VERSION_MODE" = "latest" ]; then
-            # 最新版（排除 alpha）
-            LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-              "https://api.github.com/repos/${{ github.repository }}/releases?per_page=50" | \
-              jq -r '.[] | select(.tag_name | contains("alpha") | not) | .tag_name' | \
-              head -1)
-            TAG="$LATEST_TAG"
-            SOURCE="manual-latest"
-            NEED_APPROVAL="false"
-            echo "✅ 最新版本（排除 alpha）: $TAG"
-          elif [ "$VERSION_MODE" = "latest-beta" ]; then
-            # 公测版最新（排除 alpha）
-            LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-              "https://api.github.com/repos/${{ github.repository }}/releases?per_page=50" | \
-              jq -r '.[] | select(.tag_name | contains("beta") and (contains("alpha") | not)) | .tag_name' | \
-              head -1)
-            TAG="$LATEST_TAG"
-            SOURCE="manual-latest-beta"
-            NEED_APPROVAL="false"
-            echo "✅ 最新公测版（排除 alpha）: $TAG"
-          elif [ "$VERSION_MODE" = "latest-stable" ]; then
-            # 正式版最新（排除 alpha）
-            LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-              "https://api.github.com/repos/${{ github.repository }}/releases?per_page=50" | \
-              jq -r '.[] | select(.tag_name | contains("beta") or contains("alpha") | not) | .tag_name' | \
-              head -1)
-            TAG="$LATEST_TAG"
-            SOURCE="manual-latest-stable"
-            NEED_APPROVAL="false"
-            echo "✅ 最新正式版（排除 alpha）: $TAG"
+          elif [ -n "$VERSION_MODE" ]; then
+            # 新逻辑：使用下拉列表模式
+            case "$VERSION_MODE" in
+              "latest")
+                # 最新版（排除 alpha）
+                LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                  "https://api.github.com/repos/${{ github.repository }}/releases?per_page=50" | \
+                  jq -r '.[] | select(.tag_name | contains("alpha") | not) | .tag_name' | \
+                  head -1)
+                TAG="$LATEST_TAG"
+                SOURCE="manual-latest"
+                NEED_APPROVAL="false"
+                echo "✅ 最新版本（排除 alpha）: $TAG"
+                ;;
+              "latest-beta")
+                # 公测版最新（排除 alpha）
+                LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                  "https://api.github.com/repos/${{ github.repository }}/releases?per_page=50" | \
+                  jq -r '.[] | select(.tag_name | contains("beta") and (contains("alpha") | not)) | .tag_name' | \
+                  head -1)
+                TAG="$LATEST_TAG"
+                SOURCE="manual-latest-beta"
+                NEED_APPROVAL="false"
+                echo "✅ 最新公测版（排除 alpha）: $TAG"
+                ;;
+              "latest-stable")
+                # 正式版最新（排除 alpha）
+                LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                  "https://api.github.com/repos/${{ github.repository }}/releases?per_page=50" | \
+                  jq -r '.[] | select(.tag_name | contains("beta") or contains("alpha") | not) | .tag_name' | \
+                  head -1)
+                TAG="$LATEST_TAG"
+                SOURCE="manual-latest-stable"
+                NEED_APPROVAL="false"
+                echo "✅ 最新正式版（排除 alpha）: $TAG"
+                ;;
+              "manual")
+                # 手动输入 tag（允许 alpha）
+                if [ -z "$MANUAL_TAG_INPUT" ]; then
+                  echo "❌ 选择了 manual 模式但未输入 tag"
+                  exit 1
+                fi
+                TAG="$MANUAL_TAG_INPUT"
+                SOURCE="manual-input"
+                NEED_APPROVAL="false"
+                echo "✅ 手动输入版本（允许 alpha）: $TAG"
+                ;;
+              *)
+                echo "❌ 未知的 version_mode: $VERSION_MODE"
+                exit 1
+                ;;
+            esac
           else
-            # 手动触发但未选择模式，自动获取最新版（排除 alpha） - 不需要批准
+            # 原有逻辑：手动触发但未输入 tag，自动获取最新版 - 不需要批准
             LATEST_TAG=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
               "https://api.github.com/repos/${{ github.repository }}/releases?per_page=1" | \
               jq -r '.[0].tag_name')
