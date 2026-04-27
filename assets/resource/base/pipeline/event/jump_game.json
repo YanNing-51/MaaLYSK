@@ -1,0 +1,112 @@
+{
+	"进入对局": {
+		"recognition": {
+			"type": "Or",
+			"param": {
+				"any_of": [
+					{
+						"recognition": {
+							"type": "OCR",
+							"param": {
+								"expected": ["再来一局"],
+								"roi": [367, 1014, 197, 119]
+							}
+						}
+					},
+					{
+						"recognition": {
+							"type": "TemplateMatch",
+							"param": {
+								"template": "event/进入玩梦启程.png",
+								"roi": [3, 726, 269, 221]
+							}
+						}
+					}
+				]
+			}
+		},
+		"action": {
+			"type": "Click"
+		},
+		"post_delay": 9000,
+		"rate_limit": 100,
+		"next": ["第一个小跳"]
+	},
+	"第一个小跳": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": "event/球球位置.png",
+				"roi": [278, 520, 169, 125]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 140,
+				"target": [186, 951, 40, 37]
+			}
+		},
+		"pre_delay": 100,
+		"post_delay": 1000,
+		"rate_limit": 100,
+		"next": ["第二个小跳"]
+	},
+	"第二个小跳": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": "event/球球位置.png",
+				"roi": [175, 475, 208, 143]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 220,
+				"target": [497, 952, 36, 33]
+			}
+		},
+		"pre_delay": 50,
+		"post_delay": 3000,
+		"next": ["退出跳跳"]
+	},
+	"退出跳跳": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": "event/退出跳跳.png",
+				"roi": [0, 5, 103, 130]
+			}
+		},
+		"action": {
+			"type": "Click"
+		},
+		"next": ["立即结束跳跳"]
+	},
+	"立即结束跳跳": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["立即结束"],
+				"roi": [115, 660, 185, 99]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [195, 618, 34, 33]
+			}
+		},
+		"next": ["积分是否已满", "进入对局"]
+	},
+	"积分是否已满": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["20000"],
+				"roi": [343, 735, 81, 53]
+			}
+		}
+	}
+}
