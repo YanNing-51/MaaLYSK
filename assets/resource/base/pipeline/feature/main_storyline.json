@@ -22,24 +22,24 @@
 				"roi": [0, 1168, 154, 109]
 			}
 		},
-		"timeout": 30000,
+		"timeout": 3000,
 		"next": [
-			"[JumpBack]读第1章剧情",
-			"[JumpBack]读第2章剧情",
-			"[JumpBack]读第3章剧情",
-			"[JumpBack]读第4章剧情",
-			"[JumpBack]读第5章剧情",
-			"[JumpBack]读第6章剧情",
-			"[JumpBack]读第7章剧情",
-			"[JumpBack]读第8章剧情",
-			"[JumpBack]读第9章剧情",
-			"[JumpBack]读第10章剧情",
-			"[JumpBack]读第11章剧情",
-			"[JumpBack]读第12章剧情",
-			"[JumpBack]读第13章剧情",
-			"[JumpBack]读第14章剧情",
-			"[JumpBack]读第15章剧情",
-			"[JumpBack]读第16章剧情",
+			"[JumpBack]进入主线第1章剧情",
+			"[JumpBack]进入主线第2章剧情",
+			"[JumpBack]进入主线第3章剧情",
+			"[JumpBack]进入主线第4章剧情",
+			"[JumpBack]进入主线第5章剧情",
+			"[JumpBack]进入主线第6章剧情",
+			"[JumpBack]进入主线第7章剧情",
+			"[JumpBack]进入主线第8章剧情",
+			"[JumpBack]进入主线第9章剧情",
+			"[JumpBack]进入主线第10章剧情",
+			"[JumpBack]进入主线第11章剧情",
+			"[JumpBack]进入主线第12章剧情",
+			"[JumpBack]进入主线第13章剧情",
+			"[JumpBack]进入主线第14章剧情",
+			"[JumpBack]进入主线第15章剧情",
+			"[JumpBack]进入主线第16章剧情",
 			"[JumpBack]进入战斗点击追击",
 			"[JumpBack]自动过剧情"
 		]
@@ -73,10 +73,90 @@
 		},
 		"action": {
 			"type": "Click"
-		},
-		"post_delay": 10000
+		}
 	},
-	"读第1章剧情": {
+	"进入主线第1章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"timeout": 30000,
+		"next": ["读主线第1章剧情"]
+	},
+	"进入主线第2章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第2章剧情"]
+	},
+	"进入主线第3章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第3章剧情"]
+	},
+	"进入主线第4章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第4章剧情"]
+	},
+	"进入主线第5章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第5章剧情"]
+	},
+	"进入主线第6章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第6章剧情"]
+	},
+	"进入主线第7章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第7章剧情"]
+	},
+	"进入主线第8章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第8章剧情"]
+	},
+	"进入主线第9章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第9章剧情"]
+	},
+	"进入主线第10章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第10章剧情"]
+	},
+	"进入主线第11章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第11章剧情"]
+	},
+	"进入主线第12章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第12章剧情"]
+	},
+	"进入主线第13章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第13章剧情"]
+	},
+	"进入主线第14章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第14章剧情"]
+	},
+	"进入主线第15章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第15章剧情"]
+	},
+	"进入主线第16章剧情": {
+		"max_hit": 1,
+		"rate_limit": 500,
+		"next": ["读主线第16章剧情"]
+	},
+	"读主线第1章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -90,17 +170,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第1章剧情",
-		"max_hit": 1,
-		"post_delay": 6000,
+		"focus": "读主线第1章剧情",
+		"post_delay": 5000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第1章剧情"]
 	},
-	"读第2章剧情": {
+	"读主线第2章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -114,17 +195,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第2章剧情",
-		"max_hit": 1,
+		"focus": "读主线第2章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第2章剧情"]
 	},
-	"读第3章剧情": {
+	"读主线第3章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -138,17 +220,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第3章剧情",
-		"max_hit": 1,
+		"focus": "读主线第3章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第3章剧情"]
 	},
-	"读第4章剧情": {
+	"读主线第4章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -162,17 +245,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第4章剧情",
-		"max_hit": 1,
+		"focus": "读主线第4章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第4章剧情"]
 	},
-	"读第5章剧情": {
+	"读主线第5章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -186,17 +270,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第5章剧情",
-		"max_hit": 1,
+		"focus": "读主线第5章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第5章剧情"]
 	},
-	"读第6章剧情": {
+	"读主线第6章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -210,17 +295,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第6章剧情",
-		"max_hit": 1,
+		"focus": "读主线第6章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第6章剧情"]
 	},
-	"读第7章剧情": {
+	"读主线第7章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -234,17 +320,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第7章剧情",
-		"max_hit": 1,
+		"focus": "读主线第7章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第7章剧情"]
 	},
-	"读第8章剧情": {
+	"读主线第8章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -258,17 +345,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第8章剧情",
-		"max_hit": 1,
+		"focus": "读主线第8章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第8章剧情"]
 	},
-	"读第9章剧情": {
+	"读主线第9章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -282,17 +370,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第9章剧情",
-		"max_hit": 1,
+		"focus": "读主线第9章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第9章剧情"]
 	},
-	"读第10章剧情": {
+	"读主线第10章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -306,17 +395,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第10章剧情",
-		"max_hit": 1,
+		"focus": "读主线第10章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第10章剧情"]
 	},
-	"读第11章剧情": {
+	"读主线第11章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -330,17 +420,43 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第11章剧情",
-		"max_hit": 1,
+		"focus": "读主线第11章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第11章剧情"]
 	},
-	"读第12章剧情": {
+	"读主线第12章剧情": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["12"],
+				"roi": [91, 197, 508, 988]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target_offset": [25, 30, 1, 1]
+			}
+		},
+		"focus": "读主线第12章剧情",
+		"post_delay": 6000,
+		"timeout": 30000,
+		"next": [
+			"自动过剧情",
+			"准备主线战斗追击",
+			"进入战斗点击追击",
+			"[JumpBack]确定下载资源更新"
+		],
+		"on_error": ["读主线第12章剧情"]
+	},
+	"读主线第13章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -354,41 +470,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第12章剧情",
-		"max_hit": 1,
+		"focus": "读主线第13章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第13章剧情"]
 	},
-	"读第13章剧情": {
-		"recognition": {
-			"type": "OCR",
-			"param": {
-				"expected": ["13"],
-				"roi": [91, 197, 508, 988]
-			}
-		},
-		"action": {
-			"type": "Click",
-			"param": {
-				"target_offset": [25, 30, 1, 1]
-			}
-		},
-		"focus": "读第13章剧情",
-		"max_hit": 1,
-		"post_delay": 6000,
-		"next": [
-			"自动过剧情",
-			"准备主线战斗追击",
-			"进入战斗点击追击",
-			"[JumpBack]确定下载资源更新"
-		]
-	},
-	"读第14章剧情": {
+	"读主线第14章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -402,17 +495,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第14章剧情",
-		"max_hit": 1,
+		"focus": "读主线第14章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第14章剧情"]
 	},
-	"读第15章剧情": {
+	"读主线第15章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -426,17 +520,18 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第15章剧情",
-		"max_hit": 1,
+		"focus": "读主线第15章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第15章剧情"]
 	},
-	"读第16章剧情": {
+	"读主线第16章剧情": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
@@ -450,15 +545,16 @@
 				"target_offset": [25, 30, 1, 1]
 			}
 		},
-		"focus": "读第16章剧情",
-		"max_hit": 1,
+		"focus": "读主线第16章剧情",
 		"post_delay": 6000,
+		"timeout": 30000,
 		"next": [
 			"自动过剧情",
 			"准备主线战斗追击",
 			"进入战斗点击追击",
 			"[JumpBack]确定下载资源更新"
-		]
+		],
+		"on_error": ["读主线第16章剧情"]
 	},
 	"准备主线战斗追击": {
 		"recognition": {
