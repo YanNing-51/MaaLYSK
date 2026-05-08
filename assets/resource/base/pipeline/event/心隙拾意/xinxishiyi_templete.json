@@ -65,16 +65,24 @@
 			"type": "Click"
 		},
 		"post_delay": 7000,
-		"timeout": 2000,
+		"timeout": 5000,
+		"rate_limit": 500,
 		"next": ["心隙拾意_点左三个1"],
-		"on_error": ["心隙拾意_无脑点左三个1"]
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点左三个1": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
 				"template": ["event/心隙拾意/左三个.png"],
-				"threshold": 0.6
+				"roi": [71, 444, 310, 481],
+				"threshold": 0.5,
+				"green_mask": true
 			}
 		},
 		"action": {
@@ -114,17 +122,25 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"timeout": 2000,
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
 		"next": ["心隙拾意_点下三个1"],
-		"on_error": ["心隙拾意_无脑点左三个1"]
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点下三个1": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
 				"template": ["event/心隙拾意/下三个.png"],
-				"threshold": 0.6
+				"roi": [283, 616, 310, 356],
+				"threshold": 0.5,
+				"green_mask": true
 			}
 		},
 		"action": {
@@ -164,13 +180,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点右三个1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点右三个1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点右三个1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点右三个1.png"],
+				"roi": [230, 461, 404, 250],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -209,13 +238,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点最下面贝壳1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点最下面贝壳1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点最下面贝壳1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点最下面贝壳1.png"],
+				"roi": [149, 692, 305, 271],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -284,13 +326,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点右贝壳1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点右贝壳1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点右贝壳1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点右贝壳1.png"],
+				"roi": [335, 537, 306, 272],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -359,13 +414,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点上贝壳1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点上贝壳1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点上贝壳1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点上贝壳1.png"],
+				"roi": [119, 432, 307, 273],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -434,13 +502,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点圆饼1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点圆饼1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点圆饼1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点圆饼1.png"],
+				"roi": [106, 428, 496, 534],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -539,13 +620,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点下小半圆1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点下小半圆1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点下小半圆1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点下小半圆1.png"],
+				"roi": [192, 685, 328, 240],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -584,13 +678,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点中间胡子1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点中间胡子1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点中间胡子1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点中间胡子1.png"],
+				"roi": [79, 558, 571, 259],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -629,13 +736,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点上小半圆1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点上小半圆1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点上小半圆1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点上小半圆1.png"],
+				"roi": [198, 493, 319, 215],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -674,13 +794,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点外面○1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点外面○1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点外面○1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点外面○1.png"],
+				"roi": [24, 386, 680, 628],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -794,13 +927,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点中间椭圆1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点中间椭圆1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点中间椭圆1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点中间椭圆1.png"],
+				"roi": [129, 494, 468, 333],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -839,13 +985,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点左竖胡子1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点左竖胡子1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点左竖胡子1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点左竖胡子1.png"],
+				"roi": [173, 423, 239, 550],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -884,13 +1043,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点右竖胡子1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点右竖胡子1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点右竖胡子1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点右竖胡子1.png"],
+				"roi": [302, 422, 240, 551],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -929,13 +1101,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点左下三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点左下三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点左下三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点左下三角1.png"],
+				"roi": [71, 651, 336, 340],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -974,13 +1159,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点右下三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点右下三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点右下三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点右下三角1.png"],
+				"roi": [309, 648, 337, 341],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1019,13 +1217,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点左上三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点左上三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点左上三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点左上三角1.png"],
+				"roi": [73, 416, 338, 342],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1064,13 +1275,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点右上三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点右上三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点右上三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点右上三角1.png"],
+				"roi": [306, 411, 339, 343],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1109,13 +1333,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点左三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点左三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点左三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点左三角1.png"],
+				"roi": [47, 528, 259, 365],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1139,13 +1376,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点下三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点下三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点下三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点下三角1.png"],
+				"roi": [178, 749, 359, 240],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1169,13 +1419,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点右三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点右三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点右三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点右三角1.png"],
+				"roi": [405, 524, 260, 366],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1199,13 +1462,26 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点上三角1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点上三角1"],
+
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点上三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点上三角1.png"],
+				"roi": [183, 405, 360, 241],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1229,13 +1505,25 @@
 			}
 		},
 		"pre_delay": 200,
-		"post_delay": 200,
-		"next": ["心隙拾意_点剩余的1"]
+		"post_delay": 500,
+		"timeout": 5000,
+		"rate_limit": 500,
+		"next": ["心隙拾意_点剩余的1"],
+		"on_error": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
 	},
 	"心隙拾意_点剩余的1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "TemplateMatch",
+			"param": {
+				"template": ["event/心隙拾意/点剩余的1.png"],
+				"roi": [192, 556, 326, 307],
+				"threshold": 0.5,
+				"green_mask": true
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1290,6 +1578,53 @@
 		},
 		"pre_delay": 200,
 		"post_delay": 200,
-		"next": []
+		"timeout": 10000,
+		"next": [
+			"心隙拾意已达上限",
+			"心隙拾意再来一局",
+			"[JumpBack]心隙拾意_无脑点左三个1"
+		]
+	},
+	"心隙拾意再来一局": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["再来一局"],
+				"roi": [120, 868, 474, 223]
+			}
+		},
+		"action": {
+			"type": "Click"
+		},
+		"post_delay": 7000,
+		"timeout": 5000,
+		"next": ["心隙拾意_点左三个1"],
+		"on_error": ["心隙拾意再来一局"]
+	},
+	"心隙拾意已达上限": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["4500"],
+				"roi": [364, 647, 92, 59]
+			}
+		},
+		"action": {
+			"type": "DoNothing"
+		},
+		"next": ["心隙拾意任务停止"]
+	},
+	"心隙拾意任务停止": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["确定"],
+				"roi": [120, 868, 474, 223]
+			}
+		},
+		"action": {
+			"type": "Click"
+		},
+		"next": ["stop"]
 	}
 }

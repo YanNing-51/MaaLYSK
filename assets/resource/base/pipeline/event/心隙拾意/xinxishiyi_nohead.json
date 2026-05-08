@@ -1,5 +1,12 @@
 {
 	"心隙拾意_无脑点左三个1": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
+		},
 		"action": {
 			"type": "Click",
 			"param": {
@@ -8,12 +15,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左三个2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左三个2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左三个2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -23,12 +35,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左三个3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左三个3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左三个3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -38,12 +55,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下三个1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下三个1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下三个1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -53,12 +75,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下三个2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下三个2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下三个2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -68,12 +95,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下三个3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下三个3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下三个3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -83,12 +115,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右三个1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右三个1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右三个1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -98,12 +135,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右三个2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右三个2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右三个2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -113,12 +155,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右三个3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右三个3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右三个3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -128,12 +175,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点最下面贝壳1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点最下面贝壳1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点最下面贝壳1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -143,12 +195,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点最下面贝壳2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点最下面贝壳2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点最下面贝壳2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -158,12 +215,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点最下面贝壳3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点最下面贝壳3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点最下面贝壳3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -173,12 +235,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点最下面贝壳4"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点最下面贝壳4"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点最下面贝壳4": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -188,12 +255,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点最下面贝壳5"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点最下面贝壳5"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点最下面贝壳5": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -203,12 +275,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右贝壳1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右贝壳1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右贝壳1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -218,12 +295,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右贝壳2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右贝壳2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右贝壳2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -233,12 +315,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右贝壳3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右贝壳3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右贝壳3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -248,12 +335,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右贝壳4"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右贝壳4"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右贝壳4": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -263,12 +355,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右贝壳5"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右贝壳5"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右贝壳5": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -278,12 +375,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上贝壳1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上贝壳1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上贝壳1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -293,12 +395,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上贝壳2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上贝壳2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上贝壳2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -308,12 +415,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上贝壳3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上贝壳3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上贝壳3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -323,12 +435,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上贝壳4"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上贝壳4"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上贝壳4": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -338,12 +455,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上贝壳5"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上贝壳5"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上贝壳5": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -353,12 +475,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -368,12 +495,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -383,12 +515,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -398,12 +535,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼4"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼4"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼4": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -413,12 +555,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼5"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼5"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼5": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -428,12 +575,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼6"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼6"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼6": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -443,12 +595,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点圆饼7"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点圆饼7"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点圆饼7": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -458,12 +615,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下小半圆1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下小半圆1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下小半圆1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -473,12 +635,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下小半圆2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下小半圆2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下小半圆2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -488,12 +655,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下小半圆3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下小半圆3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下小半圆3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -503,12 +675,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点中间胡子1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点中间胡子1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点中间胡子1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -518,12 +695,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点中间胡子2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点中间胡子2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点中间胡子2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -533,12 +715,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点中间胡子3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点中间胡子3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点中间胡子3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -548,12 +735,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上小半圆1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上小半圆1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上小半圆1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -563,12 +755,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上小半圆2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上小半圆2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上小半圆2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -578,12 +775,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上小半圆3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上小半圆3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上小半圆3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -593,12 +795,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -608,12 +815,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -623,12 +835,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -638,12 +855,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○4"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○4"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○4": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -653,12 +875,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○5"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○5"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○5": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -668,12 +895,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○6"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○6"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○6": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -683,12 +915,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○7"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○7"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○7": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -698,12 +935,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点外面○8"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点外面○8"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点外面○8": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -713,12 +955,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点中间椭圆1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点中间椭圆1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点中间椭圆1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -728,12 +975,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点中间椭圆2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点中间椭圆2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点中间椭圆2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -743,12 +995,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点中间椭圆3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点中间椭圆3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点中间椭圆3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -758,12 +1015,18 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左竖胡子1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左竖胡子1"],
+
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左竖胡子1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -773,12 +1036,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左竖胡子2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左竖胡子2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左竖胡子2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -788,12 +1056,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左竖胡子3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左竖胡子3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左竖胡子3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -803,12 +1076,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右竖胡子1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右竖胡子1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右竖胡子1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -818,12 +1096,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右竖胡子2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右竖胡子2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右竖胡子2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -833,12 +1116,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右竖胡子3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右竖胡子3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右竖胡子3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -848,12 +1136,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左下三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左下三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左下三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -863,12 +1156,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左下三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左下三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左下三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -878,12 +1176,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左下三角3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左下三角3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左下三角3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -893,12 +1196,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右下三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右下三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右下三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -908,12 +1216,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右下三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右下三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右下三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -923,12 +1236,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右下三角3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右下三角3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右下三角3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -938,12 +1256,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左上三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左上三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左上三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -953,12 +1276,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左上三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左上三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左上三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -968,12 +1296,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左上三角3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左上三角3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左上三角3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -983,12 +1316,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右上三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右上三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右上三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -998,12 +1336,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右上三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右上三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右上三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1013,12 +1356,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右上三角3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右上三角3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右上三角3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1028,12 +1376,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1043,12 +1396,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点左三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点左三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点左三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1058,12 +1416,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1073,12 +1436,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点下三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点下三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点下三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1088,12 +1456,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1103,12 +1476,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点右三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点右三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点右三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1118,12 +1496,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上三角1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上三角1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上三角1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1133,12 +1516,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点上三角2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点上三角2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点上三角2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1148,12 +1536,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点剩余的1"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点剩余的1"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点剩余的1": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1163,12 +1556,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点剩余的2"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点剩余的2"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点剩余的2": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1178,12 +1576,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点剩余的3"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点剩余的3"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点剩余的3": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1193,12 +1596,17 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
-		"next": ["心隙拾意_无脑点剩余的4"]
+		"timeout": 4000,
+		"next": ["心隙拾意_无脑点剩余的4"],
+		"on_error": ["心隙拾意已达上限", "心隙拾意再来一局"]
 	},
 	"心隙拾意_无脑点剩余的4": {
 		"recognition": {
-			"type": "DirectHit",
-			"param": {}
+			"type": "OCR",
+			"param": {
+				"expected": "分数",
+				"roi": [558, 7, 141, 96]
+			}
 		},
 		"action": {
 			"type": "Click",
@@ -1208,6 +1616,7 @@
 		},
 		"pre_delay": 0,
 		"post_delay": 0,
+		"timeout": 4000,
 		"next": []
 	}
 }
