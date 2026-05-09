@@ -30,7 +30,8 @@
 			"[JumpBack]选择撩动氤氲2",
 			"[JumpBack]选择撩动氤氲3",
 			"[JumpBack]选择撩动氤氲4"
-		]
+		],
+		"on_error": ["null"]
 	},
 	"选择撩动氤氲1": {
 		"recognition": {
@@ -70,7 +71,8 @@
 			"撩动氤氲结束",
 			"[JumpBack]划动挥散雾气",
 			"[JumpBack]撩动氤氲剧情点点"
-		]
+		],
+		"on_error": ["null"]
 	},
 	"选择撩动氤氲2": {
 		"recognition": {
@@ -110,7 +112,8 @@
 			"撩动氤氲结束",
 			"[JumpBack]划动挥散雾气",
 			"[JumpBack]撩动氤氲剧情点点"
-		]
+		],
+		"on_error": ["null"]
 	},
 	"选择撩动氤氲3": {
 		"recognition": {
@@ -150,7 +153,8 @@
 			"撩动氤氲结束",
 			"[JumpBack]划动挥散雾气",
 			"[JumpBack]撩动氤氲剧情点点"
-		]
+		],
+		"on_error": ["null"]
 	},
 	"选择撩动氤氲4": {
 		"recognition": {
@@ -171,7 +175,8 @@
 			"撩动氤氲结束",
 			"[JumpBack]划动挥散雾气",
 			"[JumpBack]撩动氤氲剧情点点"
-		]
+		],
+		"on_error": ["null"]
 	},
 	"撩动氤氲全部结束": {
 		"recognition": {
@@ -285,7 +290,8 @@
 			"type": "Click",
 			"param": {}
 		},
-		"next": ["已回到撩动氤氲页面"]
+		"next": ["已回到撩动氤氲页面"],
+		"on_error": ["撩动氤氲结束"]
 	},
 	"已回到撩动氤氲页面": {
 		"recognition": {
