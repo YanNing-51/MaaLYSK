@@ -64,6 +64,7 @@
 		"action": {
 			"type": "Click"
 		},
+		"focus": "开始心隙拾意小游戏第一关",
 		"post_delay": 7000,
 		"timeout": 5000,
 		"rate_limit": 500,
@@ -1676,6 +1677,7 @@
 		"action": {
 			"type": "Click"
 		},
+		"focus": "再来一局",
 		"post_delay": 7000,
 		"timeout": 5000,
 		"next": ["心隙拾意_点左三个1"],
@@ -1692,6 +1694,7 @@
 		"action": {
 			"type": "DoNothing"
 		},
+		"focus": "心隙拾意已达上限，准备停止任务",
 		"next": ["心隙拾意任务停止"]
 	},
 	"心隙拾意任务停止": {

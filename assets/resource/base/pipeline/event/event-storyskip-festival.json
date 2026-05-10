@@ -257,6 +257,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过序章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情1"]
@@ -292,6 +293,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第1章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情1"]
@@ -326,6 +328,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第2章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情2"]
@@ -360,6 +363,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第3章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情3"]
@@ -394,6 +398,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第4章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情4"]
@@ -428,6 +433,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第5章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["null"]
@@ -462,6 +468,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第6章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情6"]
@@ -496,6 +503,7 @@
 			"type": "Click",
 			"param": {}
 		},
+		"focus": "开始过第7章",
 		"post_delay": 2000,
 		"next": ["自动过剧情"],
 		"on_error": ["找找未读剧情7"]
@@ -508,6 +516,7 @@
 				"roi": [376, 1011, 178, 105]
 			}
 		},
+		"focus": "温澜秘响剧情过完，切换下一位",
 		"post_delay": 2000,
 		"next": [
 			"回到热雾迷津主页面",
