@@ -22,6 +22,12 @@
     z-index: 999 !important;
 }
 
+.VPNavBarExtra .menu {
+    right: 12px;
+    left: auto;
+    max-width: calc(100vw - 64px);
+}
+
 .VPSidebar {
     z-index: 10;
 }
