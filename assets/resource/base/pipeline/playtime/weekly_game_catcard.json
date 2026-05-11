@@ -209,9 +209,9 @@
 		"next": [
 			"是否喵喵牌页面",
 			"快乐出游再来一局页面",
+			"[JumpBack]快乐出游结算退出",
 			"[JumpBack]退出牵绊度提升popop",
 			"[JumpBack]退出获得奖励popop",
-			"[JumpBack]快乐出游结算退出",
 			"[JumpBack]退出各类弹窗(无快乐出游退出)"
 		],
 		"on_error": ["null"]
@@ -251,9 +251,9 @@
 				"all_of": [
 					{
 						"recognition": {
-							"type": "OCR",
+							"type": "TemplateMatch",
 							"param": {
-								"expected": ["退出"],
+								"template": ["playtime/快乐出游结算退出.png"],
 								"roi": [138, 1028, 206, 79]
 							}
 						}

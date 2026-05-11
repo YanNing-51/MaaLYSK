@@ -150,10 +150,28 @@
 	},
 	"退出快乐出游结算popop": {
 		"recognition": {
-			"type": "OCR",
+			"type": "Or",
 			"param": {
-				"expected": ["退出"],
-				"roi": [132, 1011, 222, 95]
+				"any_of": [
+					{
+						"recognition": {
+							"type": "OCR",
+							"param": {
+								"expected": ["退出"],
+								"roi": [132, 1011, 222, 95]
+							}
+						}
+					},
+					{
+						"recognition": {
+							"type": "TemplateMatch",
+							"param": {
+								"template": ["playtime/快乐出游结算退出.png"],
+								"roi": [138, 1028, 206, 79]
+							}
+						}
+					}
+				]
 			}
 		},
 		"action": {
