@@ -228,7 +228,7 @@
     fill: currentColor;
 }
 
-.VPNavScreen .nav-version-link {
+.VPNavScreenMenuLink:has(.nav-version-badge) {
     display: none;
 }
 
