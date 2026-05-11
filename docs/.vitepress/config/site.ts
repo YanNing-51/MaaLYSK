@@ -1,5 +1,3 @@
-import { githubRepoLink } from "./constants";
-
 export const siteConfig = {
     base: "/",
     title: "MaaLYSK",
@@ -53,5 +51,4 @@ export const sharedThemeConfig = {
             },
         },
     },
-    socialLinks: [{ icon: "github", link: githubRepoLink }],
 };

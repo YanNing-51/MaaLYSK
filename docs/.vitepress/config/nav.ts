@@ -1,9 +1,6 @@
-import { qqGroupLink, qqIconSvg } from "./constants";
 import { latestReleaseMeta } from "./version";
 
 const latestVersionBadge = `<span class="nav-version-badge"><span class="nav-version-spark">✦</span><span>${latestReleaseMeta.version}</span></span>`;
-const contactLinkText = `<span class="nav-contact-link"><span>联系我们</span>${qqIconSvg}</span>`;
-const contactLinkTextEn = `<span class="nav-contact-link"><span>Contact Us</span>${qqIconSvg}</span>`;
 
 function createVersionNavItem() {
     return {
@@ -25,8 +22,12 @@ export const zhNav = [
         link: "/zh_cn/develop/0.0",
     },
     {
-        text: contactLinkText,
-        link: qqGroupLink,
+        text: '<i class="ri-link"></i> 友情链接',
+        items: [
+            { text: "MAA", link: "https://maa.plus/" },
+            { text: "Mirror酱", link: "https://mirrorchyan.com/zh/projects?source=MaaLYSKtop&rid=MaaLYSK" },
+            { text: "MaaYuan", link: "https://maayuan.top/" },
+        ],
     },
 ];
 
@@ -41,7 +42,11 @@ export const enNav = [
         link: "/en_us/develop/0.0",
     },
     {
-        text: contactLinkTextEn,
-        link: qqGroupLink,
+        text: "Links",
+        items: [
+            { text: "MAA", link: "https://maa.plus/" },
+            { text: "Mirror酱", link: "https://mirrorchyan.com/zh/projects?source=MaaLYSKtop&rid=MaaLYSK" },
+            { text: "MaaYuan", link: "https://maayuan.top/" },
+        ],
     },
 ];
