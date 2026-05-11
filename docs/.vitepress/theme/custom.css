@@ -104,20 +104,22 @@
 /* --- "..." overflow: social links centered with label (tablet 768-1280px) --- */
 
 .VPNavBarExtra .VPSocialLinks {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 .VPNavBarExtra .VPSocialLinks::before {
     content: '联系我们';
-    display: block;
-    width: 100%;
-    text-align: center;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
     font-size: 13px;
     font-weight: 500;
     color: var(--vp-c-text-2);
-    margin-right: 0;
-    margin-bottom: 6px;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
 }
 
 /* --- Contact group (mobile nav screen only) --- */
