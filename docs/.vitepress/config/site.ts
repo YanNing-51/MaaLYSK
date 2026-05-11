@@ -1,3 +1,5 @@
+import { latestReleaseMeta } from "./version";
+
 export const siteConfig = {
     base: "/",
     title: "MaaLYSK",
@@ -16,6 +18,7 @@ export const siteConfig = {
 
 export const sharedThemeConfig = {
     logo: "/logo.ico",
+    latestReleaseMeta,
     search: {
         provider: "local",
         options: {

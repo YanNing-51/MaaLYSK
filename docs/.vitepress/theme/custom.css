@@ -1,36 +1,48 @@
 :root {
-    /* --- 浅色模式：冷调星雾紫 --- */
-
-    /* 主品牌色
-       明确紫相（偏蓝），饱和度回到“可感知”区间 */
     --vp-c-brand-1: #6A5ACD;
-    /* 核心修正点 */
-
-    /* Hover：略微提亮 + 微蓝 */
     --vp-c-brand-2: #7B6FE6;
-
-    /* Active：雾化紫 */
     --vp-c-brand-3: #978CFF;
-
-    /* 紫色软背景：现在终于“看得出是紫色” */
     --vp-c-brand-soft: rgba(106, 90, 205, 0.14);
 }
 
-/* --- 深色模式：深空冷紫 --- */
 .dark {
     --vp-c-brand-1: #B9B2FF;
     --vp-c-brand-2: #D0CBFF;
     --vp-c-brand-3: #E5E2FF;
-
     --vp-c-brand-soft: rgba(185, 178, 255, 0.2);
 }
 
-.VPNavBarMenuLink:has(.nav-version-badge) {
+/* --- Dropdown menus always on top --- */
+
+.VPNavBarMenu .items {
+    z-index: 999 !important;
+}
+
+.VPNavScreen {
+    z-index: 999 !important;
+}
+
+.VPSidebar {
+    z-index: 10;
+}
+
+.VPDocAside {
+    z-index: 10;
+}
+
+/* --- Version badge (shared) --- */
+
+.VPNavBarMenuLink.nav-version-link {
     padding: 0;
 }
 
-.VPNavBarMenuLink.nav-version-link .vpi-chevron-right {
+.nav-version-link .vpi-chevron-right {
     display: none;
+}
+
+.nav-version-mobile {
+    display: none;
+    text-decoration: none;
 }
 
 .nav-version-badge {
@@ -60,37 +72,29 @@
     text-shadow: 0 0 8px rgba(255, 199, 95, 0.65);
 }
 
-.nav-contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+.dark .nav-version-badge {
+    border-color: rgba(208, 203, 255, 0.32);
+    background:
+        linear-gradient(180deg, rgba(42, 42, 58, 0.95), rgba(32, 32, 46, 0.9)),
+        radial-gradient(circle at 16% 38%, rgba(255, 207, 116, 0.18), transparent 30%);
+    box-shadow:
+        0 0 0 1px rgba(185, 178, 255, 0.12) inset,
+        0 6px 18px rgba(185, 178, 255, 0.12);
+    color: #f0efff;
 }
 
-.nav-contact-link svg {
-    width: 18px;
-    height: 18px;
-}
+/* --- Contact group --- */
 
 .nav-contact-group {
     display: none;
 }
 
-@media (min-width: 1280px) {
-    .nav-contact-group {
-        display: inline-flex;
-        align-items: center;
-        gap: 2px;
-    }
-}
-
 .nav-contact-divider {
-    width: 1px;
-    height: 24px;
-    background-color: var(--vp-c-divider);
-    margin: 0 16px;
+    display: none;
 }
 
 .nav-contact-label {
+    display: none;
     font-size: 14px;
     font-weight: 500;
     color: var(--vp-c-text-1);
@@ -101,8 +105,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     color: var(--vp-c-text-2);
     transition: color 0.5s;
 }
@@ -113,18 +117,119 @@
 }
 
 .nav-contact-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ==================== Mobile (≤767px) ==================== */
+
+@media (max-width: 767px) {
+    .VPNavBar .content-body {
+        position: relative !important;
+    }
+
+    /* Hide nav menu version, show outside badge */
+    .VPNavBarMenu .nav-version-link {
+        display: none;
+    }
+
+    .nav-version-mobile {
+        display: inline-flex;
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    /* Hide contact from navbar */
+    .VPNavBar .nav-contact-group {
+        display: none;
+    }
+}
+
+/* Mobile nav screen: contact at bottom, centered */
+.VPNavScreen .nav-contact-group {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    border-top: 1px solid var(--vp-c-divider);
+}
+
+.VPNavScreen .nav-contact-divider {
+    display: none;
+}
+
+.VPNavScreen .nav-contact-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vp-c-text-1);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.VPNavScreen .nav-contact-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: var(--vp-c-text-2);
+    transition: color 0.5s;
+}
+
+.VPNavScreen .nav-contact-icon:hover {
+    color: var(--vp-c-text-1);
+    transition: color 0.25s;
+}
+
+.VPNavScreen .nav-contact-icon svg {
     width: 20px;
     height: 20px;
     fill: currentColor;
 }
 
-.dark .nav-version-badge {
-    border-color: rgba(208, 203, 255, 0.32);
-    background:
-        linear-gradient(180deg, rgba(42, 42, 58, 0.95), rgba(32, 32, 46, 0.9)),
-        radial-gradient(circle at 16% 38%, rgba(255, 207, 116, 0.18), transparent 30%);
-    box-shadow:
-        0 0 0 1px rgba(185, 178, 255, 0.12) inset,
-        0 6px 18px rgba(185, 178, 255, 0.12);
-    color: #f0efff;
+/* Hide version in hamburger menu */
+.VPNavScreen .nav-version-link {
+    display: none;
+}
+
+/* ==================== Tablet & Desktop (≥768px) ==================== */
+
+@media (min-width: 768px) {
+    /* Show version as nav menu item, hide outside badge */
+    .nav-version-mobile {
+        display: none;
+    }
+
+    /* Contact in navbar with divider + label */
+    .nav-contact-group {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .nav-contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-contact-divider {
+        display: block;
+        width: 1px;
+        height: 24px;
+        background-color: var(--vp-c-divider);
+        margin: 0 16px;
+    }
+
+    .nav-contact-label {
+        display: inline;
+    }
 }

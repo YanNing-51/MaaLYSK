@@ -1,18 +1,16 @@
 import { latestReleaseMeta } from "./version";
 
-const latestVersionBadge = `<span class="nav-version-badge"><span class="nav-version-spark">✦</span><span>${latestReleaseMeta.version}</span></span>`;
+const versionBadgeHtml = `<span class="nav-version-badge"><span class="nav-version-spark">✦</span><span>${latestReleaseMeta.version}</span></span>`;
 
-function createVersionNavItem() {
-    return {
-        text: latestVersionBadge,
-        link: latestReleaseMeta.link,
-        activeMatch: "^$",
-        class: "nav-version-link",
-    };
-}
+const versionNavItem = {
+    text: versionBadgeHtml,
+    link: latestReleaseMeta.link,
+    activeMatch: "^$",
+    class: "nav-version-link",
+};
 
 export const zhNav = [
-    createVersionNavItem(),
+    versionNavItem,
     {
         text: '<i class="ri-book-read-line"></i> 用户手册',
         link: "/zh_cn/manual/1.1",
@@ -32,7 +30,7 @@ export const zhNav = [
 ];
 
 export const enNav = [
-    createVersionNavItem(),
+    versionNavItem,
     {
         text: '<i class="ri-book-read-line"></i> User Manual',
         link: "/en_us/manual/1.1",
