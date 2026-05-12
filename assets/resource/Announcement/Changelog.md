@@ -1,6 +1,6 @@
 MaaLYSK更新日志
 
-# 🎉 **MaaLYSK v0.4.0-beta.2**(公测版)
+# 🎉 **MaaLYSK v0.4.0**(正式版)
 
 ❗MaaLYSK本体 是免费哒，请勿有偿购买代下、安装等服务 ❗
 
@@ -9,6 +9,20 @@ MaaLYSK更新日志
 - ## 重要通知
 
   ❗❗本次更新由于**更新了UI页面**，原先的配置可能有所更新(如**定时配置**、**启动路径**等），请在运行前**检查选项与配置**！
+
+### 📕 正式版v0.4.0更新内容
+
+### ✨限时活动读剧情
+
+尝试修复无法连续剧情问题
+
+### 🐱周常喵喵牌、🎮周常娃娃机
+
+修复打完3局后无法退出问题
+
+### ⚔️日常芯核狩猎
+
+脑测写一下未解锁左滑寻找已解锁关卡
 
 ### 📕 公测版v0.4.0-beta2更新内容
 
@@ -48,4 +62,4 @@ MaaLYSK更新日志
 
 更新UI版本至v2.12.1，框架至5.10.2
 
-[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?source=maaydoc&rid=MaaLYSK)
+[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?source=MaaLYSKUI&rid=MaaLYSK)
