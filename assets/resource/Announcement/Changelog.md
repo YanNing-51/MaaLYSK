@@ -1,14 +1,22 @@
 MaaLYSK更新日志
 
-# 🎉 **MaaLYSK v0.4.0**(正式版)
+# 🎉 **MaaLYSK v0.4.1-beta.1**(公测版)
 
 ❗MaaLYSK本体 是免费哒，请勿有偿购买代下、安装等服务 ❗
 
-## 🐾当前游戏内活动版本🐾热雾迷津🐾
+## 🐾当前游戏内活动版本🐾热雾迷津🐾十日与你_黎深花问逢时🐾
 
 - ## 重要通知
 
   ❗❗本次更新由于**更新了UI页面**，原先的配置可能有所更新(如**定时配置**、**启动路径**等），请在运行前**检查选项与配置**！
+
+  如果内置更新出现问题（如exe文件消失、UI报错等）请手动前往[Mirror酱](https://github.com/MaaAssistantArknights/MaaLYSK/releases)或[Github](https://github.com/MaaAssistantArknights/MaaLYSK/releases)下载最新版本，而不是重新下载旧版本后继续内置更新。
+
+### 📕 公测版v0.4.1-beta1更新内容
+
+### 💫免费福利签到
+
+更新版本：四星签到-十日与你_黎深花问逢时
 
 ### 📕 正式版v0.4.0更新内容
 
@@ -48,18 +56,8 @@ MaaLYSK更新日志
 
 3、为增加容错，心隙拾意增加了每个点都尝试点点的操作，会有点像在乱点，属正常现象。介意的可以自己手打游戏
 
-### 📕 公测版v0.3.10-beta1更新内容
-
-### 📖自动读剧情
-
-新增读主线剧情功能-自动过战斗+主线，偶尔识别失败手动过完再继续。
-
-### 🌟限时活动每日领取、🛍️限时活动商城领取、✨限时活动读剧情
-
-更新至热雾迷津版本
-
 ## ⚙️ GUI更新
 
 更新UI版本至v2.12.1，框架至5.10.2
 
-[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?source=MaaLYSKUI&rid=MaaLYSK)
+[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?source=maaydoc&rid=MaaLYSK)
