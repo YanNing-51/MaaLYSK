@@ -60,4 +60,4 @@ MaaLYSK更新日志
 
 更新UI版本至v2.12.1，框架至5.10.2
 
-[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?source=maaydoc&rid=MaaLYSK)
+[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?source=MaaLYSKUI&rid=MaaLYSK)
