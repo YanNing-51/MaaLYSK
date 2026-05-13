@@ -24,6 +24,9 @@ export const sharedThemeConfig = {
         { icon: { svg: qqIconSvg }, link: qqGroupLink, ariaLabel: 'QQ群' },
         { icon: 'github', link: githubRepoLink },
     ],
+    editLink: {
+        pattern: 'https://github.com/Witty36/MaaLYSK/edit/main/docs/:path',
+    },
     search: {
         provider: "local",
         options: {

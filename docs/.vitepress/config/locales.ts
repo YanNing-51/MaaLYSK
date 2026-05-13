@@ -7,6 +7,9 @@ export const locales = {
         lang: "zh-CN",
         link: "/zh_cn/",
         themeConfig: {
+            editLink: {
+                text: '在 GitHub 上编辑此页',
+            },
             outline: {
                 level: [2, 3],
                 label: "在本页",
@@ -33,6 +36,9 @@ export const locales = {
         lang: "en-US",
         link: "/en_us/",
         themeConfig: {
+            editLink: {
+                text: 'Edit this page on GitHub',
+            },
             nav: enNav,
             sidebar: {
                 "/en_us/manual/": [
