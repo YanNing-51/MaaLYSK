@@ -12,6 +12,14 @@ const versionNavItem = {
 export const zhNav = [
     versionNavItem,
     {
+        text: '<i class="ri-megaphone-line"></i> 公告栏',
+        items: [
+            { text: '关于MaaLYSK', link: '/zh_cn/announcement/0.1' },
+            { text: '反馈问题', link: '/zh_cn/announcement/0.2' },
+            { text: '联系我们', link: '/zh_cn/announcement/0.3' },
+        ],
+    },
+    {
         text: '<i class="ri-book-read-line"></i> 用户手册',
         link: "/zh_cn/manual/1.1",
     },
@@ -25,12 +33,21 @@ export const zhNav = [
             { text: "MAA", link: "https://maa.plus/" },
             { text: "Mirror酱", link: "https://mirrorchyan.com/zh/projects?source=MaaLYSKtop&rid=MaaLYSK" },
             { text: "MaaYuan", link: "https://maayuan.top/" },
+            { text: "恋与深空bwiki", link: "https://lysk.site" },
         ],
     },
 ];
 
 export const enNav = [
     versionNavItem,
+    {
+        text: '<i class="ri-megaphone-line"></i> Bulletin',
+        items: [
+            { text: 'About MaaLYSK', link: '/en_us/announcement/0.1' },
+            { text: 'Feedback', link: '/en_us/announcement/0.2' },
+            { text: 'Contact Us', link: '/en_us/announcement/0.3' },
+        ],
+    },
     {
         text: '<i class="ri-book-read-line"></i> User Manual',
         link: "/en_us/manual/1.1",
@@ -44,7 +61,8 @@ export const enNav = [
         items: [
             { text: "MAA", link: "https://maa.plus/" },
             { text: "Mirror酱", link: "https://mirrorchyan.com/zh/projects?source=MaaLYSKtop&rid=MaaLYSK" },
-            { text: "MaaYuan", link: "https://maayuan.top/" },
+            { text: "MaaYuan", link: "https://maayuan.top/" },     
+            { text: "恋与深空bwiki", link: "https://lysk.site" },
         ],
     },
 ];

@@ -34,7 +34,21 @@ export const locales = {
             },
             nav: zhNav,
             sidebar: {
+                "/zh_cn/announcement/": [
+                    {
+                        text: '<i class="ri-megaphone-line"></i> 公告栏',
+                        items: getSidebar("zh_cn", "announcement"),
+                    },
+                    {
+                        text: '<i class="ri-book-read-line"></i> 用户手册',
+                        items: getSidebar("zh_cn", "manual"),
+                    },
+                ],
                 "/zh_cn/manual/": [
+                    {
+                        text: '<i class="ri-megaphone-line"></i> 公告栏',
+                        items: getSidebar("zh_cn", "announcement"),
+                    },
                     {
                         text: '<i class="ri-book-read-line"></i> 用户手册',
                         items: getSidebar("zh_cn", "manual"),
@@ -78,7 +92,21 @@ export const locales = {
             },
             nav: enNav,
             sidebar: {
+                "/en_us/announcement/": [
+                    {
+                        text: '<i class="ri-megaphone-line"></i> Bulletin',
+                        items: getSidebar("en_us", "announcement"),
+                    },
+                    {
+                        text: '<i class="ri-book-read-line"></i> User Manual',
+                        items: getSidebar("en_us", "manual"),
+                    },
+                ],
                 "/en_us/manual/": [
+                    {
+                        text: '<i class="ri-megaphone-line"></i> Bulletin',
+                        items: getSidebar("en_us", "announcement"),
+                    },
                     {
                         text: '<i class="ri-book-read-line"></i> User Manual',
                         items: getSidebar("en_us", "manual"),
