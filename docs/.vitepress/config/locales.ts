@@ -12,7 +12,16 @@ export const locales = {
             },
             outline: {
                 level: [2, 3],
-                label: "在本页",
+                label: "本页导航",
+            },
+            darkModeSwitchLabel: '切换主题',
+            lightModeSwitchTitle: '切换到浅色模式',
+            darkModeSwitchTitle: '切换到深色模式',
+            sidebarMenuLabel: '菜单',
+            returnToTopLabel: '回到顶部',
+            docFooter: {
+                prev: '上一页',
+                next: '下一页',
             },
             nav: zhNav,
             sidebar: {
@@ -38,6 +47,16 @@ export const locales = {
         themeConfig: {
             editLink: {
                 text: 'Edit this page on GitHub',
+            },
+            outline: {
+                level: [2, 3],
+                label: 'On this page',
+            },
+            sidebarMenuLabel: 'Menu',
+            returnToTopLabel: 'Return to top',
+            docFooter: {
+                prev: 'Previous page',
+                next: 'Next page',
             },
             nav: enNav,
             sidebar: {
