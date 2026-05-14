@@ -1,4 +1,5 @@
 import { latestReleaseMeta } from "./version";
+import { getNavItems } from "./sidebar";
 
 const versionBadgeHtml = `<span class="nav-version-badge"><span class="nav-version-spark">✦</span><span>${latestReleaseMeta.version}</span></span>`;
 
@@ -13,11 +14,7 @@ export const zhNav = [
     versionNavItem,
     {
         text: '<i class="ri-megaphone-line"></i> 公告栏',
-        items: [
-            { text: '关于MaaLYSK', link: '/zh_cn/announcement/0.1' },
-            { text: '反馈问题', link: '/zh_cn/announcement/0.2' },
-            { text: '联系我们', link: '/zh_cn/announcement/0.3' },
-        ],
+        items: getNavItems("zh_cn", "announcement"),
     },
     {
         text: '<i class="ri-book-read-line"></i> 用户手册',
@@ -42,11 +39,7 @@ export const enNav = [
     versionNavItem,
     {
         text: '<i class="ri-megaphone-line"></i> Bulletin',
-        items: [
-            { text: 'About MaaLYSK', link: '/en_us/announcement/0.1' },
-            { text: 'Feedback', link: '/en_us/announcement/0.2' },
-            { text: 'Contact Us', link: '/en_us/announcement/0.3' },
-        ],
+        items: getNavItems("en_us", "announcement"),
     },
     {
         text: '<i class="ri-book-read-line"></i> User Manual',

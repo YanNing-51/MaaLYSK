@@ -3,7 +3,7 @@ import path from "path";
 
 import { docsDir } from "./constants";
 
-export function getSidebar(langDir: string, subDir: string) {
+function readSortedMdFiles(langDir: string, subDir: string) {
     const absPath = path.resolve(docsDir, langDir, subDir);
     if (!fs.existsSync(absPath)) return [];
 
@@ -21,9 +21,20 @@ export function getSidebar(langDir: string, subDir: string) {
             const idMatch = fileName.match(/^(\d+\.\d+)-/);
             const id = idMatch ? idMatch[1] : fileName.replace(".md", "");
 
-            return {
-                text: title,
-                link: `/${langDir}/${subDir}/${id}`,
-            };
+            return { title, id, fileName };
         });
+}
+
+export function getSidebar(langDir: string, subDir: string) {
+    return readSortedMdFiles(langDir, subDir).map(({ title, id }) => ({
+        text: title,
+        link: `/${langDir}/${subDir}/${id}`,
+    }));
+}
+
+export function getNavItems(langDir: string, subDir: string) {
+    return readSortedMdFiles(langDir, subDir).map(({ title, id }) => ({
+        text: title,
+        link: `/${langDir}/${subDir}/${id}`,
+    }));
 }
