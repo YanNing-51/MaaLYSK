@@ -1,7 +1,12 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue'
+import { useData } from 'vitepress'
+
+const { theme } = useData()
 
 const STORAGE_KEY = 'maaly-announcement-seen'
+const RELEASE_KEY = '__release__'
+const RELEASE_SEEN_KEY = 'maaly-release-seen'
 
 const modules = import.meta.glob('../../../zh_cn/notice/*.md', {
   query: '?raw',
@@ -21,6 +26,21 @@ const files = computed(() =>
 
 const visible = ref(false)
 const selected = ref('')
+
+// 构建时已获取的 release 数据（与版本标签同源）
+const release = computed(() => {
+  const meta: any = theme.value.latestReleaseMeta
+  if (meta?.body) {
+    return {
+      tag_name: meta.version,
+      html_url: meta.link,
+      body: meta.body,
+      published_at: meta.published_at,
+      bodyFingerprint: meta.bodyFingerprint,
+    }
+  }
+  return null
+})
 
 const bodyHtml = computed(() => {
   const file = files.value.find((f) => f.key === selected.value)
@@ -42,9 +62,15 @@ function renderMarkdown(md: string) {
   return '<p>' + html + '</p>'
 }
 
+function formatDate(d: string) {
+  return new Date(d).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 onMounted(() => {
   const current = files.value.map((f) => f.key).join('|')
   const stored = localStorage.getItem(STORAGE_KEY)
+
+  // 有新的本地公告文件时显示弹窗
   if (stored !== current && files.value.length) {
     selected.value = files.value[0].key
     visible.value = true
@@ -63,17 +89,29 @@ onMounted(() => {
   }
   document.addEventListener('click', popupHandler, true)
   document.addEventListener('mousedown', popupHandler, true)
+
+  // 构建时已获取 release，内容指纹变化时自动弹出
+  if (!visible.value && release.value?.bodyFingerprint) {
+    const seenRelease = localStorage.getItem(RELEASE_SEEN_KEY)
+    if (seenRelease !== release.value.bodyFingerprint) {
+      selected.value = RELEASE_KEY
+      visible.value = true
+    }
+  }
 })
 
 function dismiss() {
   localStorage.setItem(STORAGE_KEY, files.value.map((f) => f.key).join('|'))
+  if (release.value?.bodyFingerprint) {
+    localStorage.setItem(RELEASE_SEEN_KEY, release.value.bodyFingerprint)
+  }
   visible.value = false
 }
 </script>
 
 <template>
   <Teleport to="body">
-    <div v-if="visible && files.length" class="ap-overlay" @click.self="dismiss">
+    <div v-if="visible" class="ap-overlay" @click.self="dismiss">
       <div class="ap-dialog">
         <div class="ap-header">
           <span class="ap-title">公告</span>
@@ -87,10 +125,28 @@ function dismiss() {
             :class="{ active: selected === file.key }"
             @click="selected = file.key"
           >{{ file.name }}</button>
+          <button
+            class="ap-tab"
+            :class="{ active: selected === RELEASE_KEY }"
+            @click="selected = RELEASE_KEY"
+          >更新公告</button>
         </div>
 
         <div class="ap-body">
-          <div class="ap-notice" v-html="bodyHtml"></div>
+          <template v-if="selected === RELEASE_KEY">
+            <div v-if="release" class="ap-notice">
+              <div class="ap-release-header">
+                <span class="ap-release-tag">{{ release.tag_name }}</span>
+                <span v-if="release.published_at" class="ap-release-date">{{ formatDate(release.published_at) }}</span>
+              </div>
+              <div v-html="renderMarkdown(release.body || '')"></div>
+              <a v-if="release.html_url" class="ap-release-link" :href="release.html_url" target="_blank" rel="noopener">
+                在 GitHub 上查看完整更新 →
+              </a>
+            </div>
+            <div v-else class="ap-release-status">暂无更新公告</div>
+          </template>
+          <div v-else class="ap-notice" v-html="bodyHtml"></div>
         </div>
 
         <div class="ap-footer">
@@ -185,6 +241,40 @@ function dismiss() {
 .ap-notice :deep(h3) { font-size: 15px; font-weight: 600; margin: 12px 0 6px; }
 .ap-notice :deep(strong) { font-weight: 600; }
 .ap-notice :deep(code) { font-size: 13px; background: var(--vp-c-bg-soft); padding: 1px 4px; border-radius: 3px; }
+
+.ap-release-status {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  padding: 24px 0;
+}
+
+.ap-release-error { color: var(--vp-c-danger-1); }
+
+.ap-release-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.ap-release-tag {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+}
+
+.ap-release-date {
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+}
+
+.ap-release-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+}
 
 .ap-footer {
   padding: 12px 24px;

@@ -16,6 +16,7 @@ export const zhNav = [
         text: '<i class="ri-megaphone-line"></i> 公告栏',
         items: [
             ...getNoticeItems(),
+            { text: '更新公告', link: '#maaly-popup-__release__' },
             ...getNavItems("zh_cn", "announcement"),
         ],
     },
