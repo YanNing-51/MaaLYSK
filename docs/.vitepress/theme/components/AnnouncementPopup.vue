@@ -53,18 +53,54 @@ const bodyHtml = computed(() => {
 })
 
 function renderMarkdown(md: string) {
-  const escaped = md.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  let html = escaped
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+  const html = md
+    .replace(/\r\n/g, '\n')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+
+  const blocks = html.split(/\n{2,}/)
+  return blocks
+    .map((block) => {
+      const t = block.trim()
+      if (!t) return ''
+
+      // 标题行
+      if (t.startsWith('### ')) return `<h3>${inline(t.slice(4))}</h3>`
+      if (t.startsWith('## ')) return `<h2>${inline(t.slice(3))}</h2>`
+      if (t.startsWith('# ')) return `<h1>${inline(t.slice(2))}</h1>`
+
+      // 单行 "- ## xxx" → 作为标题
+      if (!t.includes('\n')) {
+        if (t.startsWith('- ### ')) return `<h3>${inline(t.slice(6))}</h3>`
+        if (t.startsWith('- ## ')) return `<h2>${inline(t.slice(5))}</h2>`
+        if (t.startsWith('- # ')) return `<h1>${inline(t.slice(4))}</h1>`
+      }
+
+      // 逐行处理
+      const lines = t.split(/\n/).map((line) => {
+        const lt = line.trim()
+        if (!lt) return ''
+        if (lt.startsWith('- ### ')) return `<li><strong>${inline(lt.slice(6))}</strong></li>`
+        if (lt.startsWith('- ## ')) return `<li><strong>${inline(lt.slice(5))}</strong></li>`
+        if (lt.startsWith('- # ')) return `<li><strong>${inline(lt.slice(4))}</strong></li>`
+        if (lt.startsWith('- ')) return `<li>${inline(lt.slice(2))}</li>`
+        return inline(lt)
+      }).filter(Boolean)
+
+      if (!lines.length) return ''
+      if (lines.every((l) => l.startsWith('<li>'))) return `<ul>${lines.join('')}</ul>`
+      return `<p>${lines.join('<br>')}</p>`
+    })
+    .filter(Boolean)
+    .join('')
+}
+
+function inline(s: string) {
+  return s
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-    .replace(/\n\n+/g, '</p><p>')
-    .replace(/\n/g, '<br>')
-  return '<p>' + html + '</p>'
 }
 
 function formatDate(d: string) {
@@ -241,12 +277,12 @@ function dismiss() {
   color: var(--vp-c-text-1);
 }
 
-.ap-notice :deep(p) { margin: 0 0 10px; }
+.ap-notice :deep(p) { margin: 0; }
 .ap-notice :deep(ul) { margin: 8px 0; padding-left: 20px; }
 .ap-notice :deep(li) { list-style: disc; margin: 4px 0; }
 .ap-notice :deep(a) { color: var(--vp-c-brand-1); font-weight: 500; }
-.ap-notice :deep(h2) { font-size: 16px; font-weight: 600; margin: 16px 0 8px; }
-.ap-notice :deep(h3) { font-size: 15px; font-weight: 600; margin: 12px 0 6px; }
+.ap-notice :deep(h2) { font-size: 16px; font-weight: 600; margin: 10px 0 4px; }
+.ap-notice :deep(h3) { font-size: 15px; font-weight: 600; margin: 8px 0 4px; }
 .ap-notice :deep(strong) { font-weight: 600; }
 .ap-notice :deep(code) { font-size: 13px; background: var(--vp-c-bg-soft); padding: 1px 4px; border-radius: 3px; }
 
