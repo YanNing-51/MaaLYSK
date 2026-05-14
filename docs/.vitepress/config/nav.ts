@@ -5,9 +5,8 @@ const versionBadgeHtml = `<span class="nav-version-badge"><span class="nav-versi
 
 const versionNavItem = {
     text: versionBadgeHtml,
-    link: latestReleaseMeta.link,
+    link: "#version-popup",
     activeMatch: "^$",
-    class: "nav-version-link",
 };
 
 export const zhNav = [

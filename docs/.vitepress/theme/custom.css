@@ -38,11 +38,11 @@
 
 /* --- Version badge (shared) --- */
 
-.VPNavBarMenuLink.nav-version-link {
+a[href="#version-popup"] {
     padding: 0;
 }
 
-.nav-version-link .vpi-chevron-right {
+a[href="#version-popup"] .vpi-chevron-right {
     display: none;
 }
 
@@ -158,7 +158,7 @@
         position: relative !important;
     }
 
-    .VPNavBarMenu .nav-version-link {
+    .VPNavBarMenu a[href="#version-popup"] {
         display: none;
     }
 
