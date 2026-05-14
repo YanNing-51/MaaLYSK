@@ -34,7 +34,7 @@ export function getSidebar(langDir: string, subDir: string) {
 
 export function getNavItems(langDir: string, subDir: string) {
     return readSortedMdFiles(langDir, subDir).map(({ title, id }) => ({
-        text: title,
+        text: title.replace(/<i[^>]*><\/i>\s*/g, ""),
         link: `/${langDir}/${subDir}/${id}`,
     }));
 }

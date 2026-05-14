@@ -90,18 +90,6 @@
 }
 
 /* --- "联系我们" label before social links (desktop ≥1280px) --- */
-/*  ::before = VitePress native divider (untouched)                     */
-/*  ::after  = label text, placed between divider and icons via order   */
-
-.VPNavBarSocialLinks::after {
-    content: '联系我们';
-    display: inline-flex;
-    align-items: center;
-    margin-right: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--vp-c-text-1);
-}
 
 .VPNavBarSocialLinks .VPSocialLink {
     order: 1;

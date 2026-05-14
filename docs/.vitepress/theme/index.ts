@@ -4,6 +4,7 @@ import {useData} from "vitepress";
 import BackToTop from "./components/BackToTop.vue";
 import NavContactGroup from "./components/NavContactGroup.vue";
 import ReadingTime from "./components/ReadingTime.vue";
+import SocialTitles from "./components/SocialTitles.vue";
 import "./custom.css";
 import Mermaid from "./components/Mermaid.vue";
 import Flowchart from './components/Flowchart.vue'
@@ -14,6 +15,7 @@ export default {
     Layout() {
         const { theme } = useData();
         return h(DefaultTheme.Layout, null, {
+            "layout-top": () => h(SocialTitles),
             "nav-bar-content-before": () => {
                 const meta = theme.value.latestReleaseMeta;
                 return meta ? h('a', {
