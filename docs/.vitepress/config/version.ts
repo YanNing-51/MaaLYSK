@@ -1,4 +1,5 @@
 import fs from "fs";
+import { execSync } from "child_process";
 
 import {
     githubReleasesApi,
@@ -48,8 +49,20 @@ function readChangelog(): string {
     }
 }
 
+function getChangelogDate(): string {
+    try {
+        return execSync(
+            `git log -1 --format=%aI -- "${changelogPath}"`,
+            { encoding: "utf-8" },
+        ).trim()
+    } catch {
+        return ""
+    }
+}
+
 async function getLatestReleaseMeta(): Promise<ReleaseMeta> {
     const body = readChangelog()
+    const published_at = getChangelogDate() || undefined
 
     try {
         const response = await fetch(githubReleasesApi, {
@@ -75,7 +88,7 @@ async function getLatestReleaseMeta(): Promise<ReleaseMeta> {
                 link: latestRelease.html_url ?? githubReleasesPage,
                 body: body || undefined,
                 bodyFingerprint: body ? computeFingerprint(body) : undefined,
-                published_at: latestRelease.published_at,
+                published_at,
             };
         }
     } catch {
@@ -87,6 +100,7 @@ async function getLatestReleaseMeta(): Promise<ReleaseMeta> {
         link: githubReleasesPage,
         body: body || undefined,
         bodyFingerprint: body ? computeFingerprint(body) : undefined,
+        published_at,
     };
 }
 

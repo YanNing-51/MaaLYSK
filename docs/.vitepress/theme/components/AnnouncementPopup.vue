@@ -24,6 +24,11 @@ const files = computed(() =>
     .sort((a, b) => a.key.localeCompare(b.key, 'zh'))
 )
 
+// 构建时从 git commit 取的公告日期
+const noticeDates = computed<Record<string, string>>(() => (theme.value as any).noticeDates || {})
+
+const selectedDate = computed(() => noticeDates.value[selected.value])
+
 const visible = ref(false)
 const selected = ref('')
 
@@ -146,7 +151,10 @@ function dismiss() {
             </div>
             <div v-else class="ap-release-status">暂无更新公告</div>
           </template>
-          <div v-else class="ap-notice" v-html="bodyHtml"></div>
+          <div v-else class="ap-notice">
+            <div v-if="selectedDate" class="ap-notice-date">{{ formatDate(selectedDate) }}</div>
+            <div v-html="bodyHtml"></div>
+          </div>
         </div>
 
         <div class="ap-footer">
@@ -241,6 +249,14 @@ function dismiss() {
 .ap-notice :deep(h3) { font-size: 15px; font-weight: 600; margin: 12px 0 6px; }
 .ap-notice :deep(strong) { font-weight: 600; }
 .ap-notice :deep(code) { font-size: 13px; background: var(--vp-c-bg-soft); padding: 1px 4px; border-radius: 3px; }
+
+.ap-notice-date {
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
 
 .ap-release-status {
   font-size: 14px;

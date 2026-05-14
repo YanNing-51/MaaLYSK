@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { execSync } from "child_process";
 
 import { docsDir } from "./constants";
 
@@ -54,4 +55,25 @@ export function getNoticeItems() {
                 link: `#maaly-popup-${encodeURIComponent(rawName)}`,
             };
         });
+}
+
+export function getNoticeDates(): Record<string, string> {
+    const absPath = path.resolve(docsDir, "zh_cn", "notice");
+    if (!fs.existsSync(absPath)) return {};
+    const dates: Record<string, string> = {};
+    for (const fileName of fs.readdirSync(absPath)) {
+        if (!fileName.endsWith(".md")) continue;
+        const rawName = fileName.replace(".md", "");
+        const fullPath = path.join(absPath, fileName);
+        try {
+            const date = execSync(
+                `git log -1 --format=%aI -- "${fullPath}"`,
+                { encoding: "utf-8", cwd: docsDir },
+            ).trim();
+            if (date) dates[rawName] = date;
+        } catch {
+            // 文件尚未提交或 git 不可用，跳过
+        }
+    }
+    return dates;
 }

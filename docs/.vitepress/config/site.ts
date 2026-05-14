@@ -1,4 +1,5 @@
 import { latestReleaseMeta } from "./version";
+import { getNoticeDates } from "./sidebar";
 import { qqGroupLink, githubRepoLink, qqIconSvg } from "./constants";
 
 export const siteConfig = {
@@ -21,6 +22,7 @@ export const siteConfig = {
 export const sharedThemeConfig = {
     logo: "/logo.ico",
     latestReleaseMeta,
+    noticeDates: getNoticeDates(),
     socialLinks: [
         { icon: { svg: qqIconSvg }, link: qqGroupLink, ariaLabel: 'QQ群' },
         { icon: 'github', link: githubRepoLink },
