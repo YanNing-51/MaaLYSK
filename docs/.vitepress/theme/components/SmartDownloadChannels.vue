@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
+import { useData } from 'vitepress'
 
 const props = withDefaults(defineProps<{
   detailHint?: string
@@ -63,6 +64,21 @@ const downloadChannels: DownloadChannel[] = [
 const rootRef = ref<HTMLElement | null>(null)
 const detailsRef = ref<HTMLDetailsElement | null>(null)
 const summaryRef = ref<HTMLElement | null>(null)
+const { theme } = useData()
+
+const latestVersion = computed(() => {
+  const meta: any = theme.value.latestReleaseMeta
+  return meta?.version ?? ''
+})
+
+const versionTypeLabel = computed(() => {
+  const v = latestVersion.value.toLowerCase()
+  if (v.includes('-beta') || v.includes('-alpha') || v.includes('-rc') || v.includes('-pre')) {
+    return '公测版'
+  }
+  return '正式版'
+})
+
 const isClientReady = ref(false)
 const isExpanded = ref(false)
 const detectedPlatform = ref<Platform>('unknown')
@@ -384,6 +400,11 @@ onMounted(() => {
       <p v-if="recommendation.filename" class="smart-download__filename">
         <code>{{ recommendation.filename }}</code>
       </p>
+      <p v-if="latestVersion" class="smart-download__version">
+        最新版本
+        <span class="smart-download__version-tag">{{ latestVersion }}</span>
+        <span class="smart-download__version-label" :class="versionTypeLabel === '公测版' ? 'is-beta' : 'is-stable'">{{ versionTypeLabel }}</span>
+      </p>
       <p class="smart-download__mirror">
         <span>已有 Mirror酱 CDK？</span>
         <a :href="mirrorChyanUrl" target="_blank" rel="noopener noreferrer">
@@ -506,14 +527,53 @@ onMounted(() => {
 .smart-download__filename code {
   display: inline-block;
   max-width: 100%;
-  padding: 8px 10px;
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--vp-c-brand-soft) 70%, transparent);
-  color: var(--vp-c-text-1);
-  font-size: 0.9rem;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-brand-soft);
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 85%, transparent);
+  color: var(--vp-c-brand-1);
+  font-size: 0.95rem;
   line-height: 1.5;
   white-space: normal;
   word-break: break-all;
+}
+
+.smart-download__version {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: -2px 0 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.78rem;
+}
+
+.smart-download__version-tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
+}
+
+.smart-download__version-label {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.smart-download__version-label.is-stable {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.smart-download__version-label.is-beta {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
 }
 
 .smart-download__mirror {
