@@ -21,11 +21,11 @@ export const zhNav = [
     },
     {
         text: '<i class="ri-book-read-line"></i> 用户手册',
-        link: "/zh_cn/manual/1.1",
+        items: getNavItems("zh_cn", "manual"),
     },
     {
         text: '<i class="ri-code-s-slash-line"></i> 开发文档',
-        link: "/zh_cn/develop/0.0",
+        items: getNavItems("zh_cn", "develop"),
     },
     {
         text: '<i class="ri-link"></i> 友情链接',
@@ -46,11 +46,11 @@ export const enNav = [
     },
     {
         text: '<i class="ri-book-read-line"></i> User Manual',
-        link: "/en_us/manual/1.1",
+        items: getNavItems("en_us", "manual"),
     },
     {
         text: '<i class="ri-code-s-slash-line"></i> Developer Guide',
-        link: "/en_us/develop/0.0",
+        items: getNavItems("en_us", "develop"),
     },
     {
         text: "Links",
