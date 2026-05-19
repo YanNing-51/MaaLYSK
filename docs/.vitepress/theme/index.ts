@@ -7,11 +7,8 @@ import ReadingTime from "./components/ReadingTime.vue";
 import SocialTitles from "./components/SocialTitles.vue";
 import AnnouncementPopup from "./components/AnnouncementPopup.vue";
 import VersionPopup from "./components/VersionPopup.vue";
-import ReleaseContent from "./components/ReleaseContent.vue";
-import PopupPage from "./components/PopupPage.vue";
 import SmartDownloadChannels from "./components/SmartDownloadChannels.vue";
 import "./custom.css";
-import Mermaid from "./components/Mermaid.vue";
 import Flowchart from './components/Flowchart.vue'
 
 export default {
@@ -36,10 +33,7 @@ export default {
     },
 
     enhanceApp({ app }: { app: any }) {
-        app.component('Mermaid', Mermaid);
         app.component('Flowchart', Flowchart);
-        app.component('ReleaseContent', ReleaseContent);
-        app.component('PopupPage', PopupPage);
         app.component('SmartDownloadChannels', SmartDownloadChannels);
     },
 };
