@@ -13,6 +13,14 @@ const version = computed(() => {
   return meta?.version ?? 'v0.0.1'
 })
 
+const versionLabel = computed(() => {
+  const v = version.value.toLowerCase()
+  if (v.includes('-beta') || v.includes('-alpha') || v.includes('-rc') || v.includes('-pre')) {
+    return '公测版'
+  }
+  return '正式版'
+})
+
 function show() {
   step.value = 'choice'
   visible.value = true
@@ -63,7 +71,10 @@ onMounted(() => {
 
         <template v-if="step === 'choice'">
           <div class="vp-body">
-            <div class="vp-version-tag">{{ version }}</div>
+            <div class="vp-version-row">
+              <span class="vp-version-tag">{{ version }}</span>
+              <span class="vp-version-label" :class="versionLabel === '公测版' ? 'is-beta' : 'is-stable'">{{ versionLabel }}</span>
+            </div>
             <p class="vp-subtitle">欢迎使用 MaaLYSK，请选择你的使用方式</p>
             <div class="vp-actions">
               <button class="vp-btn vp-btn-primary" @click="dismiss(); goNotBeginner()">
@@ -169,15 +180,40 @@ onMounted(() => {
   text-align: center;
 }
 
+.vp-version-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
 .vp-version-tag {
   display: inline-block;
   padding: 4px 16px;
-  margin-bottom: 12px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
   color: var(--vp-c-brand-1);
   background: var(--vp-c-brand-soft);
+}
+
+.vp-version-label {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vp-version-label.is-stable {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.vp-version-label.is-beta {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
 }
 
 .vp-subtitle {
