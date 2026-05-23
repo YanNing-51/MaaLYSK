@@ -9,7 +9,7 @@ import AnnouncementPopup from "./components/AnnouncementPopup.vue";
 import VersionPopup from "./components/VersionPopup.vue";
 import SmartDownloadChannels from "./components/SmartDownloadChannels.vue";
 import "./custom.css";
-import Flowchart from './components/Flowchart.vue'
+
 
 export default {
     extends: DefaultTheme,
@@ -33,7 +33,6 @@ export default {
     },
 
     enhanceApp({ app }: { app: any }) {
-        app.component('Flowchart', Flowchart);
         app.component('SmartDownloadChannels', SmartDownloadChannels);
     },
 };
