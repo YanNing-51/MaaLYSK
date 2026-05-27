@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /zh_cn/manual/1.1.html
+      link: "#quick-start-popup"
     - theme: alt
       text: 开发指南
       link: /zh_cn/develop/0.0.html
