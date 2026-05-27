@@ -1,25 +1,25 @@
 :root {
-    --vp-c-brand-1: #6A5ACD;
-    --vp-c-brand-2: #7B6FE6;
-    --vp-c-brand-3: #978CFF;
-    --vp-c-brand-soft: rgba(106, 90, 205, 0.14);
+    --vp-c-brand-1: #7456D4;
+    --vp-c-brand-2: #8567EB;
+    --vp-c-brand-3: #A088FE;
+    --vp-c-brand-soft: rgba(116, 86, 212, 0.14);
 }
 
 .dark {
-    --vp-c-brand-1: #877AE3;
-    --vp-c-brand-2: #9A8EED;
-    --vp-c-brand-3: #ADA4FA;
-    --vp-c-brand-soft: rgba(135, 122, 227, 0.16);
-    --vp-c-bg: #1c1a26;
-    --vp-c-bg-soft: #242230;
-    --vp-c-bg-mute: #2c2a3a;
-    --vp-c-bg-alt: #161520;
-    --vp-c-divider: rgba(135, 122, 227, 0.1);
-    --vp-c-text-1: rgba(244, 242, 255, 0.94);
-    --vp-c-text-2: rgba(220, 216, 248, 0.72);
-    --vp-c-text-3: rgba(210, 206, 245, 0.48);
-    --vp-code-color: #E4E0FF;
-    --vp-code-bg: rgba(135, 122, 227, 0.16);
+    --vp-c-brand-1: #9b84ed;
+    --vp-c-brand-2: #c2a4fb;
+    --vp-c-brand-3: #d2befd;
+    --vp-c-brand-soft: rgba(155, 132, 237, 0.16);
+    --vp-c-bg: #1b1924;
+    --vp-c-bg-soft: #272633;
+    --vp-c-bg-mute: #2e2c3c;
+    --vp-c-bg-alt: #15131e;
+    --vp-c-divider: rgba(155, 132, 237, 0.14);
+    --vp-c-text-1: rgba(244, 241, 255, 0.94);
+    --vp-c-text-2: rgba(220, 214, 248, 0.78);
+    --vp-c-text-3: rgba(222, 215, 253, 0.66);
+    --vp-code-color: #cbc0f7;
+    --vp-code-bg: rgba(155, 132, 237, 0.16);
 }
 
 .dark .custom-block.tip code {
@@ -104,14 +104,14 @@ a[href="#version-popup"] .vpi-chevron-right {
     gap: 6px;
     height: 28px;
     padding: 0 14px;
-    border: 1px solid rgba(139, 128, 210, 0.26);
+    border: 1px solid rgba(149, 121, 234, 0.26);
     border-radius: 999px;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 249, 255, 0.88)),
         radial-gradient(circle at 16% 38%, rgba(255, 207, 116, 0.2), transparent 28%);
     box-shadow:
-        0 0 0 1px rgba(151, 140, 255, 0.08) inset,
-        0 6px 18px rgba(151, 140, 255, 0.16);
+        0 0 0 1px rgba(165, 135, 250, 0.08) inset,
+        0 6px 18px rgba(165, 135, 250, 0.16);
     color: #30313d;
     font-size: 14px;
     font-weight: 700;
@@ -126,13 +126,13 @@ a[href="#version-popup"] .vpi-chevron-right {
 }
 
 .dark .nav-version-badge {
-    border-color: rgba(154, 142, 237, 0.3);
+    border-color: rgba(167, 139, 243, 0.3);
     background:
         linear-gradient(180deg, rgba(36, 34, 48, 0.95), rgba(28, 26, 38, 0.9)),
         radial-gradient(circle at 16% 38%, rgba(255, 207, 116, 0.14), transparent 30%);
     box-shadow:
-        0 0 0 1px rgba(135, 122, 227, 0.12) inset,
-        0 6px 18px rgba(135, 122, 227, 0.1);
+        0 0 0 1px rgba(155, 132, 237, 0.12) inset,
+        0 6px 18px rgba(155, 132, 237, 0.1);
     color: #e6e3ff;
 }
 
