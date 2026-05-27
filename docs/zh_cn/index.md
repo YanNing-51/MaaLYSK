@@ -19,17 +19,17 @@ hero:
       link: /zh_cn/develop/0.0.html
 
 features:
-  - icon: <i class="ri-robot-2-line"></i>
+  - icon: <i class="ri-alarm-warning-line"></i>
     title: 关于 MaaLYSK
     details: MaaLYSK的基本介绍、重要声明。
     link: /zh_cn/announcement/1.1.html
     linkText: 了解更多
-  - icon: <i class="ri-space-ship-line"></i>
+  - icon: <i class="ri-question-answer-line"></i>
     title: 常见问题
     details: 遇到问题？查看常见问题解答。
     link: /zh_cn/manual/2.2.html
     linkText: 了解更多
-  - icon: <i class="ri-tools-line"></i>
+  - icon: <i class="ri-lightbulb-flash-line"></i>
     title: 反馈 / 许愿方式
     details: bug反馈？有新功能想法？来这里告诉我们。
     link: /zh_cn/announcement/1.2.html
