@@ -20,6 +20,8 @@
     --vp-c-text-3: rgba(222, 215, 253, 0.66);
     --vp-code-color: #cbc0f7;
     --vp-code-bg: rgba(155, 132, 237, 0.16);
+    --vp-button-brand-bg: #ad96f4;
+    --vp-button-brand-hover-bg: var(--vp-c-brand-2);
 }
 
 .dark .custom-block.tip code {
@@ -28,8 +30,8 @@
 }
 
 .dark .custom-block.note code {
-    color: #C8D0E4;
-    background: rgba(200, 208, 228, 0.14);
+    color: #cfc6f2;
+    background: rgba(185, 169, 244, 0.14);
 }
 
 .dark .custom-block.tip a {
@@ -37,7 +39,7 @@
 }
 
 .dark .custom-block.note a {
-    color: #C8D0E4;
+    color: #b09af0;
 }
 
 .dark .custom-block.important a {

@@ -197,16 +197,16 @@ onMounted(() => {
 }
 
 .vp-btn-primary {
-  background: var(--vp-c-brand-2);
+  background: #ad96f4;
   color: #fff;
-  border-color: var(--vp-c-brand-2);
+  border-color: #ad96f4;
 }
 
 .vp-btn-primary:hover {
-  background: var(--vp-c-brand-3);
-  border-color: var(--vp-c-brand-3);
+  background: var(--vp-c-brand-2);
+  border-color: var(--vp-c-brand-2);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(106, 90, 205, 0.25);
+  box-shadow: 0 4px 16px rgba(155, 132, 237, 0.3);
 }
 
 .vp-btn-outline {
