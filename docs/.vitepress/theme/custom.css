@@ -6,10 +6,50 @@
 }
 
 .dark {
-    --vp-c-brand-1: #B9B2FF;
-    --vp-c-brand-2: #D0CBFF;
-    --vp-c-brand-3: #E5E2FF;
-    --vp-c-brand-soft: rgba(185, 178, 255, 0.2);
+    --vp-c-brand-1: #877AE3;
+    --vp-c-brand-2: #9A8EED;
+    --vp-c-brand-3: #ADA4FA;
+    --vp-c-brand-soft: rgba(135, 122, 227, 0.16);
+    --vp-c-bg: #1c1a26;
+    --vp-c-bg-soft: #242230;
+    --vp-c-bg-mute: #2c2a3a;
+    --vp-c-bg-alt: #161520;
+    --vp-c-divider: rgba(135, 122, 227, 0.1);
+    --vp-c-text-1: rgba(244, 242, 255, 0.94);
+    --vp-c-text-2: rgba(220, 216, 248, 0.72);
+    --vp-c-text-3: rgba(210, 206, 245, 0.48);
+    --vp-code-color: #E4E0FF;
+    --vp-code-bg: rgba(135, 122, 227, 0.16);
+}
+
+.dark .custom-block.tip code {
+    color: #D0DCC4;
+    background: rgba(208, 220, 196, 0.14);
+}
+
+.dark .custom-block.note code {
+    color: #C8D0E4;
+    background: rgba(200, 208, 228, 0.14);
+}
+
+.dark .custom-block.tip a {
+    color: #D0DCC4;
+}
+
+.dark .custom-block.note a {
+    color: #C8D0E4;
+}
+
+.dark .custom-block.important a {
+    color: var(--vp-c-brand-2);
+}
+
+.dark .custom-block.warning a {
+    color: #e0b060;
+}
+
+.dark .custom-block.danger a {
+    color: #e07070;
 }
 
 /* --- 更改桌面端导航栏间距 --- */
@@ -86,14 +126,14 @@ a[href="#version-popup"] .vpi-chevron-right {
 }
 
 .dark .nav-version-badge {
-    border-color: rgba(208, 203, 255, 0.32);
+    border-color: rgba(154, 142, 237, 0.3);
     background:
-        linear-gradient(180deg, rgba(42, 42, 58, 0.95), rgba(32, 32, 46, 0.9)),
-        radial-gradient(circle at 16% 38%, rgba(255, 207, 116, 0.18), transparent 30%);
+        linear-gradient(180deg, rgba(36, 34, 48, 0.95), rgba(28, 26, 38, 0.9)),
+        radial-gradient(circle at 16% 38%, rgba(255, 207, 116, 0.14), transparent 30%);
     box-shadow:
-        0 0 0 1px rgba(185, 178, 255, 0.12) inset,
-        0 6px 18px rgba(185, 178, 255, 0.12);
-    color: #f0efff;
+        0 0 0 1px rgba(135, 122, 227, 0.12) inset,
+        0 6px 18px rgba(135, 122, 227, 0.1);
+    color: #e6e3ff;
 }
 
 /* --- "联系我们" label before social links (desktop ≥1280px) --- */
