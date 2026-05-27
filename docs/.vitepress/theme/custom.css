@@ -30,8 +30,8 @@
 }
 
 .dark .custom-block.note code {
-    color: #cfc6f2;
-    background: rgba(185, 169, 244, 0.14);
+    color: #b6aaf2;
+    background: rgba(160, 150, 220, 0.14);
 }
 
 .dark .custom-block.tip a {
@@ -39,7 +39,7 @@
 }
 
 .dark .custom-block.note a {
-    color: #b09af0;
+    color: #aca0ee;
 }
 
 .dark .custom-block.important a {
@@ -52,6 +52,23 @@
 
 .dark .custom-block.danger a {
     color: #e07070;
+}
+
+.custom-block.note {
+    --vp-custom-block-note-bg: rgba(148, 168, 225, 0.18);
+    --vp-custom-block-note-code-bg: rgba(148, 168, 225, 0.20);
+}
+
+.custom-block.note code {
+    color: #7668d4;
+}
+
+.custom-block.note a {
+    color: #6d5ecc;
+}
+
+.custom-block.important {
+    --vp-custom-block-important-bg: rgba(178, 118, 228, 0.14);
 }
 
 /* --- 更改桌面端导航栏间距 --- */
