@@ -21,6 +21,13 @@ const versionLabel = computed(() => {
   return '正式版'
 })
 
+const releaseDate = computed(() => {
+  const meta: any = theme.value.latestReleaseMeta
+  const raw = meta?.published_at
+  if (!raw) return ''
+  return raw.slice(0, 10)
+})
+
 function show() {
   step.value = 'choice'
   visible.value = true
@@ -96,6 +103,7 @@ onMounted(() => {
                 </span>
               </button>
             </div>
+            <p v-if="releaseDate" class="vp-release-date">最新版发布于 {{ releaseDate }}</p>
           </div>
         </template>
 
@@ -214,6 +222,13 @@ onMounted(() => {
 .vp-version-label.is-beta {
   color: #f59e0b;
   background: rgba(245, 158, 11, 0.12);
+}
+
+.vp-release-date {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  opacity: 0.7;
 }
 
 .vp-subtitle {

@@ -88,7 +88,7 @@ async function getLatestReleaseMeta(): Promise<ReleaseMeta> {
                 link: latestRelease.html_url ?? githubReleasesPage,
                 body: body || undefined,
                 bodyFingerprint: body ? computeFingerprint(body) : undefined,
-                published_at,
+                published_at: latestRelease.published_at ?? published_at,
             };
         }
     } catch {
