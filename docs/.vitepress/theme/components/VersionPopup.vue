@@ -79,7 +79,7 @@ onMounted(() => {
             <div class="vp-actions">
               <button class="vp-btn vp-btn-primary" @click="dismiss(); goNotBeginner()">
                 <span class="vp-btn-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 </span>
                 <span class="vp-btn-text">
                   <span class="vp-btn-title">我不是新手</span>
@@ -88,7 +88,7 @@ onMounted(() => {
               </button>
               <button class="vp-btn vp-btn-outline" @click="step = 'beginner'">
                 <span class="vp-btn-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><g transform="translate(20,0) scale(0.85,1)"><text x="0" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor" font-family="inherit">NEW</text></g></svg>
                 </span>
                 <span class="vp-btn-text">
                   <span class="vp-btn-title">我是新手</span>
@@ -105,7 +105,7 @@ onMounted(() => {
             <div class="vp-actions">
               <button class="vp-btn vp-btn-primary" @click="dismiss(); goSimple()">
                 <span class="vp-btn-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><rect x="6" y="4" width="14" height="16" rx="2"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 5 14 11 14 10 22 20 9 13 9 14 2"/></svg>
                 </span>
                 <span class="vp-btn-text">
                   <span class="vp-btn-title">简单版教程</span>
@@ -114,7 +114,7 @@ onMounted(() => {
               </button>
               <button class="vp-btn vp-btn-outline" @click="dismiss(); goDetailed()">
                 <span class="vp-btn-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><rect x="6" y="5" width="12" height="8" rx="1" fill="currentColor" fill-opacity="0.12"/><line x1="6" y1="17" x2="18" y2="17"/><line x1="6" y1="20" x2="12" y2="20"/></svg>
                 </span>
                 <span class="vp-btn-text">
                   <span class="vp-btn-title">详细版教程</span>
