@@ -175,6 +175,10 @@
     --vp-custom-block-important-bg: rgba(178, 118, 228, 0.14);
 }
 
+.custom-block.details {
+    --vp-custom-block-details-bg: rgba(155, 135, 195, 0.10);
+}
+
 /* --- 更改桌面端导航栏间距 --- */
 
 .VPNavBarMenuLink,
