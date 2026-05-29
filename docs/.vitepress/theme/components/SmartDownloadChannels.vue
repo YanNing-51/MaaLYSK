@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
+import { detectEnvironment as detectEnv, type Platform, type Arch } from '../utils/mirror'
 
 const props = withDefaults(defineProps<{
   detailHint?: string
 }>(), {
   detailHint: '',
 })
-
-type Platform = 'windows' | 'macos' | 'linux' | 'android' | 'ios' | 'unknown'
-type Arch = 'x64' | 'arm64' | 'arm' | 'unknown'
 
 interface DownloadChannel {
   label: string
@@ -23,8 +21,6 @@ interface DownloadRecommendation {
   filename?: string
   tone: 'brand' | 'warning' | 'danger' | 'neutral'
 }
-
-type UserAgentHighEntropyHint = 'architecture'
 
 const releaseFiles = {
   windows: {
@@ -124,76 +120,10 @@ const isExpanded = ref(false)
 const detectedPlatform = ref<Platform>('unknown')
 const detectedArch = ref<Arch>('unknown')
 
-function normalizePlatform(raw: string) {
-  const value = raw.toLowerCase()
-
-  if (/(iphone|ipad|ipod|ios)/.test(value))
-    return 'ios' as const
-  if (/android/.test(value))
-    return 'android' as const
-  if (/(mac|darwin|os x)/.test(value))
-    return 'macos' as const
-  if (/(win|windows)/.test(value))
-    return 'windows' as const
-  if (/linux|x11/.test(value))
-    return 'linux' as const
-
-  return 'unknown' as const
-}
-
-function normalizeArch(raw: string) {
-  const value = raw.toLowerCase()
-
-  if (/(arm64|aarch64|armv8|apple\s?silicon)/.test(value))
-    return 'arm64' as const
-  if (/(arm|armv7)/.test(value))
-    return 'arm' as const
-  if (/(x86_64|x64|win64|wow64|amd64|intel|x86)/.test(value))
-    return 'x64' as const
-
-  return 'unknown' as const
-}
-
 async function detectEnvironment() {
-  if (typeof navigator === 'undefined')
-    return
-
-  const nav = navigator as Navigator & {
-    userAgentData?: {
-      platform?: string
-      architecture?: string
-      getHighEntropyValues?: (hints: UserAgentHighEntropyHint[]) => Promise<{
-        architecture?: string
-      }>
-    }
-  }
-
-  const userAgent = nav.userAgent ?? ''
-  const platformHint = [nav.userAgentData?.platform, nav.platform, userAgent].filter(Boolean).join(' ')
-
-  detectedPlatform.value = normalizePlatform(platformHint)
-
-  if (detectedPlatform.value === 'macos') {
-    const macArchitectureHints = [nav.userAgentData?.architecture].filter(Boolean) as string[]
-
-    if (nav.userAgentData?.getHighEntropyValues) {
-      try {
-        const hints = await nav.userAgentData.getHighEntropyValues(['architecture'])
-        if (hints.architecture)
-          macArchitectureHints.unshift(hints.architecture)
-      }
-      catch {
-        // Ignore and fall back.
-      }
-    }
-
-    const detectedMacArch = normalizeArch(macArchitectureHints.join(' '))
-    detectedArch.value = detectedMacArch === 'unknown' ? 'arm64' : detectedMacArch
-    return
-  }
-
-  const architectureHint = [nav.userAgentData?.architecture, userAgent, nav.platform].filter(Boolean).join(' ')
-  detectedArch.value = normalizeArch(architectureHint)
+  const env = await detectEnv()
+  detectedPlatform.value = env.platform
+  detectedArch.value = env.arch
 }
 
 function getArchDisplayName(arch: Arch): string {
