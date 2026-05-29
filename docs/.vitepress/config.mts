@@ -8,6 +8,10 @@ import { rewriteDocPath } from "./config/rewrites";
 // 功能：多语言入口、导航与侧边栏配置。
 import { locales } from "./config/locales";
 
+// 自定义 Shiki 主题：JSON/JSONC 代码高亮使用主题紫色
+import lightTheme from "./theme/shiki/light.json";
+import darkTheme from "./theme/shiki/dark.json";
+
 const noticeDir = path.resolve(process.cwd(), "docs", "zh_cn", "notice");
 
 export default defineConfig({
@@ -15,6 +19,12 @@ export default defineConfig({
     themeConfig: sharedThemeConfig,
     rewrites: rewriteDocPath,
     locales,
+    markdown: {
+        theme: {
+            light: lightTheme as any,
+            dark: darkTheme as any,
+        },
+    },
     vite: {
         plugins: [
             {
