@@ -3,6 +3,8 @@ import { detectEnvironment, isMirrorProjectLink } from './utils/mirror'
 export async function enhanceMirrorLinks(version: string) {
   if (typeof document === 'undefined') return
 
+  console.log('[mirror-enhance] version:', version)
+
   const isBeta = version.toLowerCase().includes('-beta')
     || version.toLowerCase().includes('-alpha')
     || version.toLowerCase().includes('-rc')
@@ -16,13 +18,18 @@ export async function enhanceMirrorLinks(version: string) {
   const os = osMap[platform]
   const detectedArch = archMap[arch]
 
-  document.querySelectorAll<HTMLAnchorElement>('a[href]').forEach(link => {
-    if (!isMirrorProjectLink(link.href)) return
+  console.log('[mirror-enhance] channel:', channel, 'os:', os, 'arch:', detectedArch)
 
+  const allLinks = document.querySelectorAll<HTMLAnchorElement>('a[href]')
+  let matched = 0
+  allLinks.forEach(link => {
+    if (!isMirrorProjectLink(link.href)) return
+    matched++
     const url = new URL(link.href)
     url.searchParams.set('channel', channel)
     if (os) url.searchParams.set('os', os)
     if (detectedArch) url.searchParams.set('arch', detectedArch)
     link.href = url.toString()
   })
+  console.log('[mirror-enhance] matched links:', matched)
 }
