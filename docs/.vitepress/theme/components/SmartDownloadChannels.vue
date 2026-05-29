@@ -24,8 +24,6 @@ interface DownloadRecommendation {
   tone: 'brand' | 'warning' | 'danger' | 'neutral'
 }
 
-type MirrorChyanOs = 'windows' | 'macos' | 'linux'
-type MirrorChyanArch = 'x64' | 'arm64'
 type UserAgentHighEntropyHint = 'architecture'
 
 const releaseFiles = {
@@ -47,23 +45,54 @@ function resolveFilename(template: string) {
   return template.replace('vx.x.x', latestVersion.value || 'vx.x.x')
 }
 
-const downloadChannels: DownloadChannel[] = [
-  {
-    label: 'Mirror酱',
-    href: 'https://mirrorchyan.com/zh/projects?rid=MaaLYSK&source=MaaLYSK_doc',
-    note: '高速下载，需购买 CDK',
-  },
-  {
-    label: '百度网盘',
-    href: 'https://pan.baidu.com/s/1qNgkEK1u2VRkGliY5jQfXQ?pwd=lysk',
-    note: '更新可能不及时',
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/Witty36/MaaLYSK',
-    note: '需科学上网',
-  },
-]
+const downloadChannels = computed<DownloadChannel[]>(() => {
+  const isBeta = latestVersion.value.toLowerCase().includes('-beta')
+    || latestVersion.value.toLowerCase().includes('-alpha')
+    || latestVersion.value.toLowerCase().includes('-rc')
+    || latestVersion.value.toLowerCase().includes('-pre')
+
+  const params = new URLSearchParams({
+    rid: 'MaaLYSK',
+    channel: isBeta ? 'beta' : 'stable',
+    source: 'maalysk-docs-download',
+  })
+
+  const osMap: Record<string, string> = {
+    windows: 'windows',
+    macos: 'macos',
+    linux: 'linux',
+  }
+  const archMap: Record<string, string> = {
+    x64: 'x64',
+    arm64: 'arm64',
+  }
+
+  const os = osMap[detectedPlatform.value]
+  const arch = archMap[detectedArch.value]
+
+  if (os && arch) {
+    params.set('os', os)
+    params.set('arch', arch)
+  }
+
+  return [
+    {
+      label: 'Mirror酱',
+      href: `https://mirrorchyan.com/zh/projects?${params.toString()}`,
+      note: '高速下载，需购买 CDK',
+    },
+    {
+      label: '百度网盘',
+      href: 'https://pan.baidu.com/s/1qNgkEK1u2VRkGliY5jQfXQ?pwd=lysk',
+      note: '更新可能不及时',
+    },
+    {
+      label: 'GitHub',
+      href: 'https://github.com/Witty36/MaaLYSK',
+      note: '需科学上网',
+    },
+  ]
+})
 
 const rootRef = ref<HTMLElement | null>(null)
 const detailsRef = ref<HTMLDetailsElement | null>(null)
@@ -306,33 +335,6 @@ function getNextDetailsBelow(): HTMLElement | null {
   return null
 }
 
-const mirrorChyanUrl = computed(() => {
-  const params = new URLSearchParams({
-    rid: 'MaaLYSK',
-    channel: 'beta',
-    source: 'maalysk-docs-download',
-  })
-
-  const osMap: Record<string, MirrorChyanOs | undefined> = {
-    windows: 'windows',
-    macos: 'macos',
-    linux: 'linux',
-  }
-  const archMap: Record<string, MirrorChyanArch | undefined> = {
-    x64: 'x64',
-    arm64: 'arm64',
-  }
-
-  const os = osMap[detectedPlatform.value]
-  const arch = archMap[detectedArch.value]
-
-  if (os && arch) {
-    params.set('os', os)
-    params.set('arch', arch)
-  }
-
-  return `https://mirrorchyan.com/zh/projects?${params.toString()}`
-})
 
 async function revealChannels() {
   if (props.detailHint) {
@@ -418,12 +420,6 @@ onMounted(() => {
         <span class="smart-download__version-tag">{{ latestVersion }}</span>
         <span class="smart-download__version-label" :class="versionTypeLabel === '公测版' ? 'is-beta' : 'is-stable'">{{ versionTypeLabel }}</span>
         <span v-if="releaseDate" class="smart-download__release-date--inline">{{ releaseDate }}</span>
-      </p>
-      <p class="smart-download__mirror">
-        <span>已有 Mirror酱 CDK？</span>
-        <a :href="mirrorChyanUrl" target="_blank" rel="noopener noreferrer">
-          前往 Mirror酱 高速下载
-        </a>
       </p>
     </div>
 
@@ -546,9 +542,9 @@ onMounted(() => {
   max-width: 100%;
   padding: 8px 12px;
   border-radius: 10px;
-  border: 1px solid var(--vp-c-brand-soft);
-  background: color-mix(in srgb, var(--vp-c-brand-soft) 85%, transparent);
-  color: var(--vp-c-brand-1);
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-soft) 40%, transparent);
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 55%, transparent);
+  color: var(--vp-c-text-2);
   font-size: 0.95rem;
   line-height: 1.5;
   white-space: normal;
@@ -595,37 +591,18 @@ onMounted(() => {
 }
 
 .smart-download__version-label.is-stable {
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
+  color: rgba(16, 185, 129, 0.88);
+  background: rgba(16, 185, 129, 0.06);
 }
 
 .smart-download__version-label.is-beta {
-  color: #f59e0b;
-  background: rgba(245, 158, 11, 0.12);
+  color: rgba(245, 158, 11, 0.88);
+  background: rgba(245, 158, 11, 0.06);
 }
 
 .smart-download__version-date {
   color: rgba(155, 148, 185, 0.45);
   font-size: 0.65rem;
-}
-
-.smart-download__mirror {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 2px 0 0;
-  color: var(--vp-c-text-2);
-  line-height: 1.6;
-}
-
-.smart-download__mirror a {
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.smart-download__mirror a:hover {
-  text-decoration: underline;
 }
 
 .smart-download__details {
