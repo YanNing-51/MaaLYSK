@@ -8,7 +8,7 @@ hero:
   name: MaaLYSK
   text: 恋与深空小助手
   tagline: >
-    基于 MaaFramework 的恋与深空日常 / 肝活助手，图像识别 + 模拟控制，一键处理日常活动，解放双手！
+    基于 MaaFramework 的恋与深空日常 / 肝活小助手，图像识别 + 模拟控制，一键处理日常活动，解放双手！
   # image:
   #   src: /logo.png
   #   alt: logo
