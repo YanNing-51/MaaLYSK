@@ -3,8 +3,13 @@ name: Alist Distribution
 on:
   workflow_dispatch:
     inputs:
+      tag:
+        description: "版本号（填写后直接分发该版本，忽略下方模式选择）"
+        required: false
+        default: ""
+        type: string
       version_mode:
-        description: "选择分发模式（选 manual 时在 tag 填版本号）"
+        description: "选择分发模式（仅在上方 tag 为空时生效）"
         required: false
         default: "latest"
         type: choice
@@ -13,11 +18,6 @@ on:
           - "latest-beta"
           - "latest-stable"
           - "manual"
-      tag:
-        description: "版本号（仅 manual 模式需要填写，install.yml 自动传入）"
-        required: false
-        default: ""
-        type: string
 
 jobs:
   get-version:
@@ -35,12 +35,18 @@ jobs:
           TAG_INPUT="${{ github.event.inputs.tag }}"
           VERSION_MODE="${{ github.event.inputs.version_mode }}"
 
-          # install.yml 传了 tag 但没选 version_mode → 自动触发，需要批准
-          if [ -n "$TAG_INPUT" ] && [ -z "$VERSION_MODE" ]; then
+          if [ -n "$TAG_INPUT" ]; then
+            # 填了 tag 就直接用（install.yml 传入 或 手动填写）
             TAG="$TAG_INPUT"
-            SOURCE="install-workflow"
-            NEED_APPROVAL="true"
-            echo "✅ 来自 install workflow 的版本: $TAG"
+            if [ -z "$VERSION_MODE" ]; then
+              SOURCE="install-workflow"
+              NEED_APPROVAL="true"
+              echo "✅ 来自 install workflow 的版本: $TAG"
+            else
+              SOURCE="manual-tag"
+              NEED_APPROVAL="false"
+              echo "✅ 手动指定版本: $TAG"
+            fi
           elif [ -n "$VERSION_MODE" ]; then
             # 新逻辑：使用下拉列表模式
             case "$VERSION_MODE" in
