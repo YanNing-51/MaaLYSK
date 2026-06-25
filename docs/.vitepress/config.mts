@@ -26,6 +26,12 @@ export default defineConfig({
         },
     },
     vite: {
+        server: {
+            watch: {
+                usePolling: true,
+                interval: 1000,
+            },
+        },
         plugins: [
             {
                 name: "notice-reload",
