@@ -153,7 +153,8 @@
 			"是否集齐9个徽章",
 			"是否有喵喵币",
 			"[JumpBack]喵喵牌再抽一次_Check"
-		]
+		],
+		"on_error": ["null"]
 	},
 	"是否集齐9个徽章": {
 		"recognition": {
