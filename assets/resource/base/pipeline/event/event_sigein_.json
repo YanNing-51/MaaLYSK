@@ -100,10 +100,30 @@
 	},
 	"进入签到_心动挚礼": {
 		"recognition": {
-			"type": "TemplateMatch",
+			"type": "Or",
 			"param": {
-				"template": ["event/signin/心动挚礼_黎深夕晖凝刻.png"],
-				"roi": [85, 157, 350, 986]
+				"any_of": [
+					{
+						"recognition": {
+							"type": "TemplateMatch",
+							"param": {
+								"template": [
+									"event/signin/心动挚礼_黎深夕晖凝刻.png"
+								],
+								"roi": [85, 157, 350, 986]
+							}
+						}
+					},
+					{
+						"recognition": {
+							"type": "OCR",
+							"param": {
+								"expected": ["心动", "夕晖凝刻"],
+								"roi": [56, 151, 628, 954]
+							}
+						}
+					}
+				]
 			}
 		},
 		"action": {

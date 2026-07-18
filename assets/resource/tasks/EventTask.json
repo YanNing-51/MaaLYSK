@@ -1,7 +1,7 @@
 {
 	"task": [
 		{
-			"name": "🍐免费福利签到",
+			"name": "💫免费福利签到",
 			//"entry": "stop",
 			"entry": "进入福利签到",
 			"default_check": false,
@@ -85,7 +85,6 @@
 				{
 					"name": "温澜秘响",
 					"description": "消耗云雾团糕读温澜秘响剧情",
-
 					"pipeline_override": {
 						"选择剧情菜单": {
 							"recognition": {
@@ -134,7 +133,6 @@
 				{
 					"name": "衣帽间对话",
 					"description": "制作衣帽间的衣服并过对话剧情",
-
 					"pipeline_override": {
 						"进入生日剧情": {
 							"next": ["进入衣帽间制作"]
