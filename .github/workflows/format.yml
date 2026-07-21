@@ -15,12 +15,6 @@ jobs:
     if: github.event.repository.fork == false && github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout base tools (trusted)
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.base_ref }}
-          path: __base__
-
       - name: Checkout (PR)
         if: github.event_name == 'pull_request_target'
         uses: actions/checkout@v4
@@ -31,6 +25,13 @@ jobs:
         if: github.event_name != 'pull_request_target'
         uses: actions/checkout@v4
 
+      - name: Checkout base tools (trusted)
+        if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+          path: __base__
+
       - name: Use trusted tools
         if: github.event_name == 'pull_request_target'
         run: |
@@ -38,6 +39,7 @@ jobs:
           cp -r __base__/tools .
 
       - name: Cleanup base checkout
+        if: github.event_name == 'pull_request_target'
         run: rm -rf __base__
 
       - name: Setup Node.js
